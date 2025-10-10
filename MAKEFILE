@@ -1,0 +1,32 @@
+CC = g++
+OPTIMIZE = -O2 -std=c++17 -DYAML_CPP_STATIC_DEFINE
+
+OBJ_DIR = ./bin/
+SRC_DIR = ./src/
+
+OBJSF = .o
+CSF   = .c
+CPPSF = .cpp
+HSF   = .h
+HPPSF = .hpp
+
+TARGET = SAS
+
+
+MAIN_NAME = App
+
+MAIN_SRC = $(SRC_DIR)$(MAIN_NAME)$(CPPSF)
+MAIN_HDR = $(SRC_DIR)$(MAIN_NAME)$(HPPSF)
+
+MAIN_OBJ = $(OBJ_DIR)$(MAIN_NAME)$(OBJSF)
+
+OBJ = $(MAIN_OBJ)
+
+.PHONY: all
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CC) $(OPTIMIZE) -o $(TARGET) $(OBJ)
+
+$(MAIN_OBJ): $(MAIN_SRC) $(MAIN_HDR)
+	$(CC) $(OPTIMIZE) -c $(MAIN_SRC) -o $(MAIN_OBJ)
