@@ -3,7 +3,7 @@
 
 int main()
 {
-    std::unique_ptr<SasCore> core = std::make_unique<SasCore>();
+    std::unique_ptr<SAS::SasCore> core = std::make_unique<SAS::SasCore>();
 
     std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++ " << std::endl;
     std::cout << "This is Test Module SAS Programs " << std::endl;
