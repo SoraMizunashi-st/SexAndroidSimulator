@@ -20,8 +20,8 @@
 // SENaM is a small-scale network model that predicts and outputs changes in emotions, parameters, and actions from input strings.
 // Please refer to the reference for basic operation.
 // URL: https://xxxxx/SENaM/Reference.html
-// For individual inquiries, please contact Minashi Sora. (StellaLab.)
-// Email : xxxxxxxx@gmail.com
+// For individual inquiries, please contact Mizunashi Sora. (StellaLab.)
+// Email : shuiwukong6@gmail.com
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // SENaM Project Coding Style and Naming Conventions
 // This document outlines the standardized coding style and naming conventions for the SENaM C++ project.
@@ -93,8 +93,8 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Standard Library Header
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#include <iostream>
-#include <string>
+#include <iostream> // use <std::cout>
+#include <string>   // use <string>
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
 class SasCore
