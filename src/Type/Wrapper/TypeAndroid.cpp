@@ -3,7 +3,8 @@
 
 
 SAS::TypeAndroid::TypeAndroid()
-    :Param( std::make_unique< std::vector<ErogenousZoneParam>>( static_cast<size_t>(ErogenousZoneName::LIST_SIZE)))
+    : Data( std::make_unique< F_ConfigAndroidData >() )
+    , Param( std::make_unique< std::vector< F_ErogenousZoneParam>>( static_cast<size_t>(E_ErogenousZoneName::LIST_SIZE)))
 {
 
 } 

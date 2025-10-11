@@ -82,7 +82,9 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 #include "../Enum/TypeEnumErogenousZone.hpp"
 #include "../Enum/TypeEnumRole.hpp"
+#include "../Enum/TypeEnumSex.hpp"
 
+#include "../Struct/TypeStructConfigAndroidData.hpp"
 #include "../Struct/TypeStructErogenousZone.hpp"
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
@@ -116,8 +118,8 @@ public:
     ~TypeAndroid() = default;
 
 private:
-
-    std::unique_ptr< std::vector<ErogenousZoneParam> > Param;
+    std::unique_ptr< F_ConfigAndroidData > Data;
+    std::unique_ptr< std::vector< F_ErogenousZoneParam > > Param;
 
 };
 

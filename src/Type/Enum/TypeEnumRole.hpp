@@ -100,7 +100,7 @@
 namespace SAS
 {
 
-enum class Role : uint8_t
+enum class E_RoleType : uint8_t
 {
     DEFAULT  = 0 ,
     ANDROID  = 1 ,

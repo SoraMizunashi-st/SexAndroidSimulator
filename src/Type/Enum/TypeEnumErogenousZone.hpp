@@ -100,7 +100,7 @@
 namespace SAS
 {
 
-enum class ErogenousZoneName : uint8_t
+enum class E_ErogenousZoneName : uint8_t
 {
     BREASTS_LEFT  = 0 ,
     BREASTE_RIGHT = 1 ,

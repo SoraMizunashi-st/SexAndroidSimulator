@@ -19,9 +19,9 @@ TARGET = SAS
 # -----------------------------------------------------------------------------------------------------------------------------
 
 MAIN_NAME = App
-MAIN_SRC = $(SRC_DIR)$(MAIN_NAME)$(CPPSF)
-MAIN_HDR = $(SRC_DIR)$(MAIN_NAME)$(HPPSF)
-MAIN_OBJ = $(OBJ_DIR)$(MAIN_NAME)$(OBJSF)
+MAIN_SRC  = $(SRC_DIR)$(MAIN_NAME)$(CPPSF)
+MAIN_HDR  = $(SRC_DIR)$(MAIN_NAME)$(HPPSF)
+MAIN_OBJ  = $(OBJ_DIR)$(MAIN_NAME)$(OBJSF)
 
 # -----------------------------------------------------------------------------------------------------------------------------
 #
@@ -29,11 +29,11 @@ MAIN_OBJ = $(OBJ_DIR)$(MAIN_NAME)$(OBJSF)
 #
 # -----------------------------------------------------------------------------------------------------------------------------
 
-CORE_DIR = Core/
+CORE_DIR  = Core/
 CORE_NAME = SasCore
-CORE_SRC = $(SRC_DIR)$(CORE_DIR)$(CORE_NAME)$(CPPSF)
-CORE_HDR = $(SRC_DIR)$(CORE_DIR)$(CORE_NAME)$(HPPSF)
-CORE_OBJ = $(OBJ_DIR)$(CORE_DIR)$(CORE_NAME)$(OBJSF)
+CORE_SRC  = $(SRC_DIR)$(CORE_DIR)$(CORE_NAME)$(CPPSF)
+CORE_HDR  = $(SRC_DIR)$(CORE_DIR)$(CORE_NAME)$(HPPSF)
+CORE_OBJ  = $(OBJ_DIR)$(CORE_DIR)$(CORE_NAME)$(OBJSF)
 
 
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -46,32 +46,42 @@ TYPE_DIR  = Type/
 ENUM_DIR  = Enum/
 # -----------------------------------------------------------------------------------------------------------------------------
 ENUM_NAME1 = TypeEnumRole
-ENUM_SRC1 = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME1)$(CPPSF)
-ENUM_HDR1 = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME1)$(HPPSF)
-ENUM_OBJ1 = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME1)$(OBJSF)
+ENUM_SRC1  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME1)$(CPPSF)
+ENUM_HDR1  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME1)$(HPPSF)
+ENUM_OBJ1  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME1)$(OBJSF)
 
 ENUM_NAME2 = TypeEnumErogenousZone
-ENUM_SRC2 = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME2)$(CPPSF)
-ENUM_HDR2 = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME2)$(HPPSF)
-ENUM_OBJ2 = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME2)$(OBJSF)
+ENUM_SRC2  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME2)$(CPPSF)
+ENUM_HDR2  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME2)$(HPPSF)
+ENUM_OBJ2  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME2)$(OBJSF)
+
+ENUM_NAME3 = TypeEnumSex
+ENUM_SRC3  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME3)$(CPPSF)
+ENUM_HDR3  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME3)$(HPPSF)
+ENUM_OBJ3  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME3)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
-ENUM_OBJ  = $(ENUM_OBJ1) $(ENUM_OBJ2)
+ENUM_OBJ  = $(ENUM_OBJ1) $(ENUM_OBJ2) $(ENUM_OBJ3)
 # -----------------------------------------------------------------------------------------------------------------------------
 STRUCT_DIR = Struct/
 # -----------------------------------------------------------------------------------------------------------------------------
 STRUCT_NAME1 = TypeStructErogenousZone
-STRUCT_SRC1 = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME1)$(CPPSF)
-STRUCT_HDR1 = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME1)$(HPPSF)
-STRUCT_OBJ1 = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME1)$(OBJSF)
+STRUCT_SRC1  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME1)$(CPPSF)
+STRUCT_HDR1  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME1)$(HPPSF)
+STRUCT_OBJ1  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME1)$(OBJSF)
+
+STRUCT_NAME2 = TypeStructConfigAndroidData
+STRUCT_SRC2  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME2)$(CPPSF)
+STRUCT_HDR2  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME2)$(HPPSF)
+STRUCT_OBJ2  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME2)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
-STRUCT_OBJ = $(STRUCT_OBJ1)
+STRUCT_OBJ = $(STRUCT_OBJ1) $(STRUCT_OBJ2)
 # -----------------------------------------------------------------------------------------------------------------------------
 WRAPPER_DIR = Wrapper/
 # -----------------------------------------------------------------------------------------------------------------------------
 WRAPPER_NAME1 = TypeAndroid
-WRAPPER_SRC1 = $(SRC_DIR)$(TYPE_DIR)$(WRAPPER_DIR)$(WRAPPER_NAME1)$(CPPSF)
-WRAPPER_HDR1 = $(SRC_DIR)$(TYPE_DIR)$(WRAPPER_DIR)$(WRAPPER_NAME1)$(HPPSF)
-WRAPPER_OBJ1 = $(OBJ_DIR)$(TYPE_DIR)$(WRAPPER_DIR)$(WRAPPER_NAME1)$(OBJSF)
+WRAPPER_SRC1  = $(SRC_DIR)$(TYPE_DIR)$(WRAPPER_DIR)$(WRAPPER_NAME1)$(CPPSF)
+WRAPPER_HDR1  = $(SRC_DIR)$(TYPE_DIR)$(WRAPPER_DIR)$(WRAPPER_NAME1)$(HPPSF)
+WRAPPER_OBJ1  = $(OBJ_DIR)$(TYPE_DIR)$(WRAPPER_DIR)$(WRAPPER_NAME1)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
 WRAPPER_OBJ = $(WRAPPER_OBJ1)
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -124,9 +134,15 @@ $(ENUM_OBJ1): $(ENUM_SRC1) $(ENUM_HDR1)
 
 $(ENUM_OBJ2): $(ENUM_SRC2) $(ENUM_HDR2)
 	$(CC) $(OPTIMIZE) -c $(ENUM_SRC2) -o $(ENUM_OBJ2)
+
+$(ENUM_OBJ3): $(ENUM_SRC3) $(ENUM_HDR3)
+	$(CC) $(OPTIMIZE) -c $(ENUM_SRC3) -o $(ENUM_OBJ3)
 # -----------------------------------------------------------------------------------------------------------------------------
 $(STRUCT_OBJ1): $(STRUCT_SRC1) $(STRUCT_HDR1)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC1) -o $(STRUCT_OBJ1)
+
+$(STRUCT_OBJ2): $(STRUCT_SRC2) $(STRUCT_HDR2)
+	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC2) -o $(STRUCT_OBJ2)
 # -----------------------------------------------------------------------------------------------------------------------------
 $(WRAPPER_OBJ1): $(WRAPPER_SRC1) $(WRAPPER_HDR1)
 	$(CC) $(OPTIMIZE) -c $(WRAPPER_SRC1) -o $(WRAPPER_OBJ1)

@@ -56,8 +56,8 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Include Guarde
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#ifndef TYPE_STRUCT_EROGENOUS_ZONE_HPP
-#define TYPE_STRUCT_EROGENOUS_ZONE_HPP
+#ifndef TYPE_STRUCT_CONFIG_ANDROID_DATA_HPP
+#define TYPE_STRUCT_CONFIG_ANDROID_DATA_HPP
 // -------------------------------------------------------------------------------------------------------------------------------------//
 #ifndef __SAS_BUILD__
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -81,6 +81,8 @@
 // Custom Object Header
 // -------------------------------------------------------------------------------------------------------------------------------------//
 #include "../Enum/TypeEnumErogenousZone.hpp"
+#include "../Enum/TypeEnumRole.hpp"
+#include "../Enum/TypeEnumSex.hpp"
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
 
@@ -102,11 +104,11 @@
 namespace SAS
 {
 
-struct F_ErogenousZoneParam
+struct F_ConfigAndroidData
 {
-    E_ErogenousZoneName IndexName = E_ErogenousZoneName::UNKNOWN;
-    uint8_t SensitivityLevel;
-    uint8_t Currentvalue;
+    std::string Name;
+    uint8_t Age;
+    E_SexType Sex = E_SexType::UNKNOWN;
 
 };
 
