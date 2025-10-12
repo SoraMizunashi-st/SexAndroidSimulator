@@ -111,8 +111,14 @@ enum class E_ErogenousZoneName : uint8_t
     NIPPLE_LEFT   = 2 ,
     NIPPLE_RIGHT  = 3 ,
 
+    PUSSY    = 4 ,
+    CLITORIS = 5 ,
+    GSPOT    = 6 ,
+    PORTIO   = 7 ,
+    ANAL     = 8 ,
+
     LIST_SIZE,
-    UNKNOWN = 250
+    UNKNOWN = 250,
 
 };
 

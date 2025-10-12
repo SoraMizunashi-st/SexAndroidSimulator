@@ -1,7 +1,8 @@
 #include "./TypePersonalityTensor.hpp"
 
-SAS::PersonalityTensor::PersonalityTensor()
-    : m_PersonalityTensor( std::make_unique<T_PersonalityTensor>())
+SAS::PersonalityTensor::PersonalityTensor( const int p_EmbeddingDimension )
+    : m_PersonalityTensor( p_EmbeddingDimension , 0.0f)
+    , m_PersonalityWeightTensor( p_EmbeddingDimension , 0.0f )
 {
 
 }

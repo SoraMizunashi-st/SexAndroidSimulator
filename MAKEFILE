@@ -59,8 +59,13 @@ ENUM_NAME3 = TypeEnumSex
 ENUM_SRC3  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME3)$(CPPSF)
 ENUM_HDR3  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME3)$(HPPSF)
 ENUM_OBJ3  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME3)$(OBJSF)
+
+ENUM_NAME4 = TypeEnumColor
+ENUM_SRC4  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME4)$(CPPSF)
+ENUM_HDR4  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME4)$(HPPSF)
+ENUM_OBJ4  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME4)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
-ENUM_OBJ  = $(ENUM_OBJ1) $(ENUM_OBJ2) $(ENUM_OBJ3)
+ENUM_OBJ  = $(ENUM_OBJ1) $(ENUM_OBJ2) $(ENUM_OBJ3) $(ENUM_OBJ4)
 # -----------------------------------------------------------------------------------------------------------------------------
 STRUCT_DIR = Struct/
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -73,8 +78,18 @@ STRUCT_NAME2 = TypeStructConfigAndroidData
 STRUCT_SRC2  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME2)$(CPPSF)
 STRUCT_HDR2  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME2)$(HPPSF)
 STRUCT_OBJ2  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME2)$(OBJSF)
+
+STRUCT_NAME3 = TypeStructColor
+STRUCT_SRC3  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME3)$(CPPSF)
+STRUCT_HDR3  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME3)$(HPPSF)
+STRUCT_OBJ3  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME3)$(OBJSF)
+
+STRUCT_NAME4 = TypeStructCharacterClothes
+STRUCT_SRC4  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME4)$(CPPSF)
+STRUCT_HDR4  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME4)$(HPPSF)
+STRUCT_OBJ4  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME4)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
-STRUCT_OBJ = $(STRUCT_OBJ1) $(STRUCT_OBJ2)
+STRUCT_OBJ = $(STRUCT_OBJ1) $(STRUCT_OBJ2) $(STRUCT_OBJ3) $(STRUCT_OBJ4)
 # -----------------------------------------------------------------------------------------------------------------------------
 TYPES_DIR = Types/
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -151,12 +166,21 @@ $(ENUM_OBJ2): $(ENUM_SRC2) $(ENUM_HDR2)
 
 $(ENUM_OBJ3): $(ENUM_SRC3) $(ENUM_HDR3)
 	$(CC) $(OPTIMIZE) -c $(ENUM_SRC3) -o $(ENUM_OBJ3)
+
+$(ENUM_OBJ4): $(ENUM_SRC4) $(ENUM_HDR4)
+	$(CC) $(OPTIMIZE) -c $(ENUM_SRC4) -o $(ENUM_OBJ4)
 # -----------------------------------------------------------------------------------------------------------------------------
 $(STRUCT_OBJ1): $(STRUCT_SRC1) $(STRUCT_HDR1)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC1) -o $(STRUCT_OBJ1)
 
 $(STRUCT_OBJ2): $(STRUCT_SRC2) $(STRUCT_HDR2)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC2) -o $(STRUCT_OBJ2)
+
+$(STRUCT_OBJ3): $(STRUCT_SRC3) $(STRUCT_HDR3)
+	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC3) -o $(STRUCT_OBJ3)
+
+$(STRUCT_OBJ4): $(STRUCT_SRC4) $(STRUCT_HDR4)
+	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC4) -o $(STRUCT_OBJ4)
 # -----------------------------------------------------------------------------------------------------------------------------
 $(TYPES_OBJ1): $(TYPES_SRC1) $(TYPES_HDR1)
 	$(CC) $(OPTIMIZE) -c $(TYPES_SRC1) -o $(TYPES_OBJ1)

@@ -86,6 +86,10 @@
 
 #include "../Struct/TypeStructConfigAndroidData.hpp"
 #include "../Struct/TypeStructErogenousZone.hpp"
+
+#include "../Types/TypesUsingTensor.hpp"
+
+#include "./TypePersonalityTensor.hpp"
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
 
@@ -98,6 +102,8 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Standard Library Header
 // -------------------------------------------------------------------------------------------------------------------------------------//
+#include <iostream>
+
 #include <string>  // use <string>
 #include <cstdint> // use <uint8_t>
 #include <cstddef> // use <size_t>
@@ -121,8 +127,9 @@ public:
     ~TypeAndroid() = default;
 
 private:
-    std::unique_ptr< F_ConfigAndroidData > m_Data;
-    std::unique_ptr< std::vector< F_ErogenousZoneParam > > m_Param;
+    F_ConfigAndroidData  m_Data;
+
+    PersonalityTensor m_Personality;
 
 };
 

@@ -118,11 +118,12 @@ namespace SAS
 class PersonalityTensor
 {
 public:
-    PersonalityTensor();
+    PersonalityTensor(const int p_EmbeddingDimension);
     ~PersonalityTensor() = default;
 
 private:
-    std::unique_ptr<T_PersonalityTensor> m_PersonalityTensor;
+    T_PersonalityTensor m_PersonalityTensor;
+    T_PersonalityTensor m_PersonalityWeightTensor;
 
 };
 

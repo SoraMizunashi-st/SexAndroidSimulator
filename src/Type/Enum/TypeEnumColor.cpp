@@ -1,0 +1,1 @@
+#include "./TypeEnumColor.hpp"
