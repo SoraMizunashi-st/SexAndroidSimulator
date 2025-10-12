@@ -56,8 +56,8 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Include Guarde
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#ifndef TYPE_STRUCT_CHARACTER_CLOTHES_HPP
-#define TYPE_STRUCT_CHARACTER_CLOTHES_HPP
+#ifndef TYPE_ENUM_CLOTH_PANTY_HPP
+#define TYPE_ENUM_CLOTH_PANTY_HPP
 // -------------------------------------------------------------------------------------------------------------------------------------//
 #ifndef __SAS_BUILD__
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -93,9 +93,8 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Standard Library Header
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#include <string>  // use <string>
-
 #include <cstdint> // use <uint8_t>
+
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -104,57 +103,21 @@
 namespace SAS
 {
 
-struct F_CharacterClothes
+enum class E_CL_Panty : uint8_t
 {
-    // === Head & Face (頭部・顔) ===
-    int HeadAccessory1;     // ヘアバンド、帽子などの主要アクセサリー
-    int HeadAccessory2;     // ヘッドアクセサリの2番目のスロット
-    int HairStyle;          // 髪型（モデル/テクスチャID）
-    int FaceAccessory1;     // 眼鏡、マスク、主要な顔の装飾
-    int FaceAccessory2;     // フェイスペイント、タトゥーなど
+    NAKED                 = 0 ,
+    SIMPLE_WHITE_PANTY    = 1 ,
+    SIMPLE_BLACK_PANTY    = 2 ,
+    SIMPLE_RED_PANTY      = 3 ,
+    SIMPLE_PINK_PANTY     = 4 ,
+    SIMPLE_BLUE_PANTY     = 5 ,
+    SIMPLE_GREEN_PANTY    = 6 ,
+    SIMPLE_YELLOW_PANTY   = 7 ,
 
-    // === Body Attachments (身体装着物/ピアスなど) ===
-    int EarringLeft;        // 耳のアクセサリー（ピアス、イヤリング）
-    int EarringRight;       // 耳のアクセサリー（ピアス、イヤリング）
-    int NipplePiercingLeft; // 乳首の装飾/アクセサリー
-    int NipplePiercingRight;// 乳首の装飾/アクセサリー
-    int NavelPiercing;      // へそ（BellyButton）の装飾/アクセサリー
-    int ClitPiercing;       // 陰核の装飾/アクセサリー (Clitoris)
-    int AnalAccessory;      // アナルの装飾/アクセサリー (Anal)
 
-    // === Upper Body Apparel (上半身のアパレル) ===
-    int Outerwear;          // アウター（コート、ジャケット）
-    int Top;                // トップス、シャツ、セーター
-    int Bra;                // 上の肌着、ブラジャー、インナー
-
-    // === Lower Body Apparel (下半身のアパレル) ===
-    int Bottoms;            // ズボン、スカート、主要なボトムス
-    int Panties;            // 下の肌着、パンツ（Shortsをより一般的な名称に）
-
-    // === Limbs & Extremities (四肢・末端) ===
-    int UpperArmLeft;       // 左上腕（アームバンドなど）
-    int UpperArmRight;      // 右上腕（アームバンドなど）
-    int HandwearLeft;       // 左手（グローブ、ミトンなど）
-    int HandwearRight;      // 右手（グローブ、ミトンなど）
-    int WristAccessoryLeft; // 左手首（腕時計、ブレスレット）
-    int WristAccessoryRight;// 右手首（腕時計、ブレスレット）
-
-    // === Legs & Feet (脚部・足) ===
-    int UpperThighLeft;     // 左太もも（ガーターベルト、レッグリング）
-    int UpperThighRight;    // 右太もも（ガーターベルト、レッグリング）
-    int LegwearLeft;        // 左脚（靴下、ストッキング、タイツ）
-    int LegwearRight;       // 右脚（靴下、ストッキング、タイツ）
-    int FootwearLeft;       // 左足（靴、ブーツ）
-    int FootwearRight;      // 右足（靴、ブーツ）
-
-    // === Non-Limb Accessories (非身体部位アクセサリー) ===
-    int NeckAccessory;      // ネックレス、チョーカー、スカーフ（新規追加）
-    int WaistAccessory;     // ベルト、腰回りのチェーン（新規追加）
-    int FullBodyAccessory;  // 天使の輪、羽など（部位に縛られない大きな装飾）
+    LIST_SIZE ,
+    NONE_ID ,
 };
-
-
-constexpr F_CharacterClothes CL_Preset_Naked = { 0 };
 
 
 }

@@ -1,0 +1,1 @@
+#include "./TypeEnumClothPanty.hpp"
