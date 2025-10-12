@@ -73,8 +73,28 @@ CLOTH_NAME1 = TypeEnumClothPanty
 CLOTH_SRC1  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME1)$(CPPSF)
 CLOTH_HDR1  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME1)$(HPPSF)
 CLOTH_OBJ1  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME1)$(OBJSF)
+
+CLOTH_NAME2 = TypeEnumClothHairStyle
+CLOTH_SRC2  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME2)$(CPPSF)
+CLOTH_HDR2  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME2)$(HPPSF)
+CLOTH_OBJ2  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME2)$(OBJSF)
+
+CLOTH_NAME3 = TypeEnumClothHeadAccessory
+CLOTH_SRC3  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME3)$(CPPSF)
+CLOTH_HDR3  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME3)$(HPPSF)
+CLOTH_OBJ3  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME3)$(OBJSF)
+
+CLOTH_NAME4 = TypeEnumClothFaceAccessory
+CLOTH_SRC4  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME4)$(CPPSF)
+CLOTH_HDR4  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME4)$(HPPSF)
+CLOTH_OBJ4  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME4)$(OBJSF)
+
+CLOTH_NAME5 = TypeEnumClothEarring
+CLOTH_SRC5  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME5)$(CPPSF)
+CLOTH_HDR5  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME5)$(HPPSF)
+CLOTH_OBJ5  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME5)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
-CLOTH_OBJ  = $(CLOTH_OBJ1)
+CLOTH_OBJ  = $(CLOTH_OBJ1) $(CLOTH_OBJ2) $(CLOTH_OBJ3) $(CLOTH_OBJ4) $(CLOTH_OBJ5)
 # -----------------------------------------------------------------------------------------------------------------------------
 STRUCT_DIR = Struct/
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -181,6 +201,18 @@ $(ENUM_OBJ4): $(ENUM_SRC4) $(ENUM_HDR4)
 # -----------------------------------------------------------------------------------------------------------------------------
 $(CLOTH_OBJ1): $(CLOTH_SRC1) $(CLOTH_HDR1)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC1) -o $(CLOTH_OBJ1)
+	
+$(CLOTH_OBJ2): $(CLOTH_SRC2) $(CLOTH_HDR2)
+	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC2) -o $(CLOTH_OBJ2)
+
+$(CLOTH_OBJ3): $(CLOTH_SRC3) $(CLOTH_HDR3)
+	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC3) -o $(CLOTH_OBJ3)
+
+$(CLOTH_OBJ4): $(CLOTH_SRC4) $(CLOTH_HDR4)
+	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC4) -o $(CLOTH_OBJ4)
+
+$(CLOTH_OBJ5): $(CLOTH_SRC5) $(CLOTH_HDR5)
+	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC5) -o $(CLOTH_OBJ5)
 # -----------------------------------------------------------------------------------------------------------------------------
 $(STRUCT_OBJ1): $(STRUCT_SRC1) $(STRUCT_HDR1)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC1) -o $(STRUCT_OBJ1)

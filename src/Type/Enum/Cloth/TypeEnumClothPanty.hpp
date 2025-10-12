@@ -103,7 +103,7 @@
 namespace SAS
 {
 
-enum class E_CL_Panty : uint8_t
+enum class E_CL_PANTY : uint8_t
 {
     NAKED                 = 0 ,
     SIMPLE_WHITE_PANTY    = 1 ,
