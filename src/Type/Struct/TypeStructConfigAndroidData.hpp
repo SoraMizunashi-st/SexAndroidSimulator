@@ -118,13 +118,15 @@ struct F_ConfigAndroidData
 {
     std::string Name;
     uint8_t Age;
-    E_SexType Sex = E_SexType::UNKNOWN;
+    E_SexType Sex;
     F_ColorRGB HairColor;
     F_ColorRGB EyeColor;
 
     F_CharacterClothes Cloth;
 
-    std::vector< F_ErogenousZoneParam > ErogenousParam;// = { static_cast<size_t>(E_ErogenousZoneName::LIST_SIZE) , { E_ErogenousZoneName::UNKNOWN , 0 , 0 } };
+    std::vector< F_ErogenousZoneParam > ErogenousParam;
+
+    F_ConfigAndroidData();
 };
 
 
