@@ -1,5 +1,5 @@
 CC = g++
-OPTIMIZE = -O2 -std=c++17 -DYAML_CPP_STATIC_DEFINE
+OPTIMIZE = -O2 -std=c++20 -DYAML_CPP_STATIC_DEFINE
 
 OBJ_DIR = ./bin/
 SRC_DIR = ./src/

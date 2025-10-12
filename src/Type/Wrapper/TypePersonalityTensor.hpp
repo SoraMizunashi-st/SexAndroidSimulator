@@ -86,6 +86,8 @@
 
 #include "../Struct/TypeStructConfigAndroidData.hpp"
 #include "../Struct/TypeStructErogenousZone.hpp"
+
+#include "../Types/TypesUsingTensor.hpp"
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
 
@@ -113,7 +115,16 @@
 namespace SAS
 {
 
+class PersonalityTensor
+{
+public:
+    PersonalityTensor();
+    ~PersonalityTensor() = default;
 
+private:
+    std::unique_ptr<T_PersonalityTensor> m_PersonalityTensor;
+
+};
 
 
 }

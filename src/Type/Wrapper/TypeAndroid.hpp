@@ -121,8 +121,8 @@ public:
     ~TypeAndroid() = default;
 
 private:
-    std::unique_ptr< F_ConfigAndroidData > Data;
-    std::unique_ptr< std::vector< F_ErogenousZoneParam > > Param;
+    std::unique_ptr< F_ConfigAndroidData > m_Data;
+    std::unique_ptr< std::vector< F_ErogenousZoneParam > > m_Param;
 
 };
 

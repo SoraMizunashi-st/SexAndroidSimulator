@@ -101,6 +101,7 @@
 #include <string>  // use <string>
 #include <cstdint> // use <uint8_t>
 #include <cstddef> // use <size_t>
+#include <concepts>
 
 #include <vector>   // use < vector >
 #include <memory>   // use < std::unique_ptr , std::make_uniquer >
@@ -114,11 +115,30 @@ namespace SAS
 {
 
 
-template < class TypeTensorParam >
-using BasicTensor = std::vector< TypeTensorParam >;
+template < class Type_TensorParam >
+using T_BasicTensor = std::vector< Type_TensorParam >;
 
-using PersonalityTensor = BasicTensor<float>;
-using EmotionTensor     = BasicTensor<float>;
+template <typename Type_Integer >
+requires std::integral<Type_Integer>
+using T_IntegerTensor    = T_BasicTensor<Type_Integer>;
+
+using T_TokenIDsTensor  = T_IntegerTensor<int>;
+
+template <typename Type_FloatingPoint >
+requires std::floating_point<Type_FloatingPoint>
+using T_FloatingTensor    = T_BasicTensor<Type_FloatingPoint>;
+
+using T_PersonalityTensor = T_FloatingTensor<float>;
+using T_EmotionTensor     = T_FloatingTensor<float>;
+
+
+constexpr int EMOTION_DIMENSION_8D  = 8;
+constexpr int EMOTION_DIMENSION_32D = 32;
+
+constexpr int EMOTION_DIMENSION_8Dx8D   = EMOTION_DIMENSION_8D  * EMOTION_DIMENSION_8D;
+constexpr int EMOTION_DIMENSION_32Dx32D = EMOTION_DIMENSION_32D * EMOTION_DIMENSION_32D;
+
+
 
 }
 // -------------------------------------------------------------------------------------------------------------------------------------//
