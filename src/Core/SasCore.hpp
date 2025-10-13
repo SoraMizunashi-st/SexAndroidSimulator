@@ -113,6 +113,13 @@ public:
 
     void Test();
 
+    // ---------------------------------------------------------------------------------------------------------------------------------//
+    // Calling core logic from outside the library can be done individually ,
+    // but to explicitly indicate the transition stage ,
+    // we will use a method chain format int the from
+    // step1 : std::unique_ptr<SAS::SasCore> core = std::make_unique<SAS::SasCore>();
+    // step2 : core->Run().MainLoop();
+    // ---------------------------------------------------------------------------------------------------------------------------------//
     SasCore& Run();
     int MainLoop();
 
@@ -123,7 +130,7 @@ private:
     std::unique_ptr<TypeAndroid> android;
 
 
-    SAS::SasCore& ResourceCheack();
+    SAS::SasCore& ResourceCheck();
     SAS::SasCore& InferenceAction();
     SAS::SasCore& Result();
 };

@@ -22,7 +22,7 @@ SAS::TypeAndroid::TypeAndroid()
 // Accessor / Getter Method
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
-int SAS::TypeAndroid::getWalletBasicModey()
+int SAS::TypeAndroid::getWalletBasicMoney()
 {
     return m_Wallet.BasicMoney;
 }

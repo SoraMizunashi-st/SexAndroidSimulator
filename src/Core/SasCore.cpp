@@ -33,9 +33,9 @@ int SAS::SasCore::MainLoop()
     {
 
         std::cout   << " Reaming LifeTimes : " << LifeTime  << "(Vita)"
-                    << " | Money : " << android->getWalletBasicModey() << "(Pico)" << std::endl;
+                    << " | Money : " << android->getWalletBasicMoney() << "(Pico)" << std::endl;
  
-        this->ResourceCheack().InferenceAction().Result();
+        this->ResourceCheck().InferenceAction().Result();
         
         LifeTime--;
         if( LifeTime <= 0 ){ break; }
@@ -47,9 +47,9 @@ int SAS::SasCore::MainLoop()
     return 0;
 }
 
-SAS::SasCore& SAS::SasCore::ResourceCheack()
+SAS::SasCore& SAS::SasCore::ResourceCheck()
 {
-    std::cout << " Current Resource Cheack | Finished " << std::endl;
+    std::cout << " Current Resource Check | Finished " << std::endl;
     return *this;
 }
 
