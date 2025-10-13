@@ -86,6 +86,10 @@
 
 #include "../Struct/TypeStructConfigAndroidData.hpp"
 #include "../Struct/TypeStructErogenousZone.hpp"
+#include "../Struct/TypeStructWallet.hpp"
+
+
+#include "../Struct/TypeStructWallet.hpp"
 
 #include "../Types/TypesUsingTensor.hpp"
 
@@ -126,8 +130,19 @@ public:
     TypeAndroid();
     ~TypeAndroid() = default;
 
+    // ---------------------------------------------------------------------------------------------------------------------------------//
+    // Accessor / Setter Method
+    // ---------------------------------------------------------------------------------------------------------------------------------//
+
+    // ---------------------------------------------------------------------------------------------------------------------------------//
+    // Accessor / Getter Method
+    // ---------------------------------------------------------------------------------------------------------------------------------//
+    int getWalletBasicModey();
+
 private:
     F_ConfigAndroidData  m_Data;
+
+    F_Wallet m_Wallet;
 
     PersonalityTensor m_Personality;
 

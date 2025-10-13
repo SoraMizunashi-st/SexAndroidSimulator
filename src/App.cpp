@@ -12,10 +12,12 @@ int main()
     std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++ " << std::endl;
 
     core->Test();
+    core->Run().MainLoop();
 
     auto end = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
 
+    std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++ " << std::endl;
     std::cout << "Execution Time (Core Init): " << duration.count() << " ms" << std::endl;
     std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++ " << std::endl;
     // ----------------------------------------------------

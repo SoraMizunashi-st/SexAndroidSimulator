@@ -18,11 +18,12 @@ TARGET = SAS
 #
 # -----------------------------------------------------------------------------------------------------------------------------
 
-MAIN_NAME = App
-MAIN_SRC  = $(SRC_DIR)$(MAIN_NAME)$(CPPSF)
-MAIN_HDR  = $(SRC_DIR)$(MAIN_NAME)$(HPPSF)
-MAIN_OBJ  = $(OBJ_DIR)$(MAIN_NAME)$(OBJSF)
-
+MAIN_NAME1 = App
+MAIN_SRC1  = $(SRC_DIR)$(MAIN_NAME1)$(CPPSF)
+MAIN_HDR1  = $(SRC_DIR)$(MAIN_NAME1)$(HPPSF)
+MAIN_OBJ1  = $(OBJ_DIR)$(MAIN_NAME1)$(OBJSF)
+# -----------------------------------------------------------------------------------------------------------------------------
+MAIN_OBJ = $(MAIN_OBJ1)
 # -----------------------------------------------------------------------------------------------------------------------------
 #
 # Core Object
@@ -30,12 +31,12 @@ MAIN_OBJ  = $(OBJ_DIR)$(MAIN_NAME)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
 
 CORE_DIR  = Core/
-CORE_NAME = SasCore
-CORE_SRC  = $(SRC_DIR)$(CORE_DIR)$(CORE_NAME)$(CPPSF)
-CORE_HDR  = $(SRC_DIR)$(CORE_DIR)$(CORE_NAME)$(HPPSF)
-CORE_OBJ  = $(OBJ_DIR)$(CORE_DIR)$(CORE_NAME)$(OBJSF)
-
-
+CORE_NAME1 = SasCore
+CORE_SRC1  = $(SRC_DIR)$(CORE_DIR)$(CORE_NAME1)$(CPPSF)
+CORE_HDR1  = $(SRC_DIR)$(CORE_DIR)$(CORE_NAME1)$(HPPSF)
+CORE_OBJ1  = $(OBJ_DIR)$(CORE_DIR)$(CORE_NAME1)$(OBJSF)
+# -----------------------------------------------------------------------------------------------------------------------------
+CORE_OBJ = $(CORE_OBJ1)
 # -----------------------------------------------------------------------------------------------------------------------------
 #
 # Type Object
@@ -159,8 +160,12 @@ CLOTH_SRC18  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME18)$(CPPS
 CLOTH_HDR18  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME18)$(HPPSF)
 CLOTH_OBJ18  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(CLOTH_DIR)$(CLOTH_NAME18)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
-CLOTH_OBJ   = $(CLOTH_OBJ1) $(CLOTH_OBJ2) $(CLOTH_OBJ3) $(CLOTH_OBJ4) $(CLOTH_OBJ5)
-CLOTH_OBJ  += $(CLOTH_OBJ6) $(CLOTH_OBJ7) $(CLOTH_OBJ8) $(CLOTH_OBJ9) $(CLOTH_OBJ10)
+CLOTH_HDF_ALL  = $(CLOTH_HDR1)  $(CLOTH_HDR2)  $(CLOTH_HDR3)  $(CLOTH_HDR4)  $(CLOTH_HDR5)  $(CLOTH_HDR6)
+CLOTH_HDF_ALL += $(CLOTH_HDR7)  $(CLOTH_HDR8)  $(CLOTH_HDR9)  $(CLOTH_HDR10) $(CLOTH_HDR11) $(CLOTH_HDR12)
+CLOTH_HDF_ALL += $(CLOTH_HDR13) $(CLOTH_HDR14) $(CLOTH_HDR15) $(CLOTH_HDR16) $(CLOTH_HDR17) $(CLOTH_HDR18)
+# -----------------------------------------------------------------------------------------------------------------------------
+CLOTH_OBJ   = $(CLOTH_OBJ1)  $(CLOTH_OBJ2)  $(CLOTH_OBJ3)  $(CLOTH_OBJ4)  $(CLOTH_OBJ5)
+CLOTH_OBJ  += $(CLOTH_OBJ6)  $(CLOTH_OBJ7)  $(CLOTH_OBJ8)  $(CLOTH_OBJ9)  $(CLOTH_OBJ10)
 CLOTH_OBJ  += $(CLOTH_OBJ11) $(CLOTH_OBJ12) $(CLOTH_OBJ13) $(CLOTH_OBJ14) $(CLOTH_OBJ15)
 CLOTH_OBJ  += $(CLOTH_OBJ16) $(CLOTH_OBJ17) $(CLOTH_OBJ18)
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -185,8 +190,13 @@ STRUCT_NAME4 = TypeStructCharacterClothes
 STRUCT_SRC4  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME4)$(CPPSF)
 STRUCT_HDR4  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME4)$(HPPSF)
 STRUCT_OBJ4  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME4)$(OBJSF)
+
+STRUCT_NAME5 = TypeStructWallet
+STRUCT_SRC5  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME5)$(CPPSF)
+STRUCT_HDR5  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME5)$(HPPSF)
+STRUCT_OBJ5  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME5)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
-STRUCT_OBJ = $(STRUCT_OBJ1) $(STRUCT_OBJ2) $(STRUCT_OBJ3) $(STRUCT_OBJ4)
+STRUCT_OBJ = $(STRUCT_OBJ1) $(STRUCT_OBJ2) $(STRUCT_OBJ3) $(STRUCT_OBJ4) $(STRUCT_OBJ5)
 # -----------------------------------------------------------------------------------------------------------------------------
 TYPES_DIR = Types/
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -223,6 +233,52 @@ TYPE_OBJ = $(ENUM_OBJ) $(CLOTH_OBJ) $(STRUCT_OBJ) $(TYPES_OBJ) $(WRAPPER_OBJ)
 # -----------------------------------------------------------------------------------------------------------------------------
 OBJ = $(MAIN_OBJ) $(CORE_OBJ) $(TYPE_OBJ)
 
+
+# -----------------------------------------------------------------------------------------------------------------------------
+#
+# All Object / dependent file
+#
+# -----------------------------------------------------------------------------------------------------------------------------
+DF_MAIN1    = $(MAIN_HDR1) $(CORE_HDR1)
+# -----------------------------------------------------------------------------------------------------------------------------
+DF_CORE1    = $(CORE_HDR1) $(WRAPPER_HDR1)
+# -----------------------------------------------------------------------------------------------------------------------------
+DF_ENUM1    = $(ENUM_HDR1)
+DF_ENUM2    = $(ENUM_HDR2)
+DF_ENUM3    = $(ENUM_HDR3)
+DF_ENUM4    = $(ENUM_HDR4)
+# -----------------------------------------------------------------------------------------------------------------------------
+DF_CLOTH1   = $(CLOTH_HDR1)
+DF_CLOTH2   = $(CLOTH_HDR2)
+DF_CLOTH3   = $(CLOTH_HDR3)
+DF_CLOTH4   = $(CLOTH_HDR4)
+DF_CLOTH5   = $(CLOTH_HDR5)
+DF_CLOTH6   = $(CLOTH_HDR6)
+DF_CLOTH7   = $(CLOTH_HDR7)
+DF_CLOTH8   = $(CLOTH_HDR8)
+DF_CLOTH9   = $(CLOTH_HDR9)
+DF_CLOTH10  = $(CLOTH_HDR10)
+DF_CLOTH11  = $(CLOTH_HDR11)
+DF_CLOTH12  = $(CLOTH_HDR12)
+DF_CLOTH13  = $(CLOTH_HDR13)
+DF_CLOTH14  = $(CLOTH_HDR14)
+DF_CLOTH15  = $(CLOTH_HDR15)
+DF_CLOTH16  = $(CLOTH_HDR16)
+DF_CLOTH17  = $(CLOTH_HDR17)
+DF_CLOTH18  = $(CLOTH_HDR18)
+# -----------------------------------------------------------------------------------------------------------------------------
+DF_STRUCT1  = $(STRUCT_HDR1)
+DF_STRUCT2  = $(STRUCT_HDR2)
+DF_STRUCT3  = $(STRUCT_HDR3)
+DF_STRUCT4  = $(STRUCT_HDR4) $(CLOTH_HDF_ALL)
+DF_STRUCT5  = $(STRUCT_HDR5)
+# -----------------------------------------------------------------------------------------------------------------------------
+DF_TYPES1   = $(TYPES_HDR1)
+# -----------------------------------------------------------------------------------------------------------------------------
+DF_WRAPPER1 = $(WRAPPER_HDR1) $(STRUCT_HDF1) $(STRUCT_HDF2) $(STRUCT_HDF5)
+DF_WRAPPER2 = $(WRAPPER_HDR2)
+# -----------------------------------------------------------------------------------------------------------------------------
+
 # -----------------------------------------------------------------------------------------------------------------------------
 #
 # Rule
@@ -239,16 +295,16 @@ $(TARGET): $(OBJ)
 # App Object
 #
 # -----------------------------------------------------------------------------------------------------------------------------
-$(MAIN_OBJ): $(MAIN_SRC) $(MAIN_HDR)
-	$(CC) $(OPTIMIZE) -c $(MAIN_SRC) -o $(MAIN_OBJ)
+$(MAIN_OBJ1): $(MAIN_SRC1) $(DF_MAIN1)
+	$(CC) $(OPTIMIZE) -c $(MAIN_SRC1) -o $(MAIN_OBJ1)
 
 # -----------------------------------------------------------------------------------------------------------------------------
 #
 # Core Object
 #
 # -----------------------------------------------------------------------------------------------------------------------------
-$(CORE_OBJ): $(CORE_SRC) $(CORE_HDR)
-	$(CC) $(OPTIMIZE) -c $(CORE_SRC) -o $(CORE_OBJ)
+$(CORE_OBJ1): $(CORE_SRC1) $(DF_CORE1)
+	$(CC) $(OPTIMIZE) -c $(CORE_SRC1) -o $(CORE_OBJ1)
 
 # -----------------------------------------------------------------------------------------------------------------------------
 #
@@ -257,99 +313,102 @@ $(CORE_OBJ): $(CORE_SRC) $(CORE_HDR)
 # -----------------------------------------------------------------------------------------------------------------------------
 # Type / Enum Object
 # -----------------------------------------------------------------------------------------------------------------------------
-$(ENUM_OBJ1): $(ENUM_SRC1) $(ENUM_HDR1)
+$(ENUM_OBJ1): $(ENUM_SRC1) $(DF_ENUM1)
 	$(CC) $(OPTIMIZE) -c $(ENUM_SRC1) -o $(ENUM_OBJ1)
 
-$(ENUM_OBJ2): $(ENUM_SRC2) $(ENUM_HDR2)
+$(ENUM_OBJ2): $(ENUM_SRC2) $(DF_ENUM2)
 	$(CC) $(OPTIMIZE) -c $(ENUM_SRC2) -o $(ENUM_OBJ2)
 
-$(ENUM_OBJ3): $(ENUM_SRC3) $(ENUM_HDR3)
+$(ENUM_OBJ3): $(ENUM_SRC3) $(DF_ENUM3)
 	$(CC) $(OPTIMIZE) -c $(ENUM_SRC3) -o $(ENUM_OBJ3)
 
-$(ENUM_OBJ4): $(ENUM_SRC4) $(ENUM_HDR4)
+$(ENUM_OBJ4): $(ENUM_SRC4) $(DF_ENUM4)
 	$(CC) $(OPTIMIZE) -c $(ENUM_SRC4) -o $(ENUM_OBJ4)
 # -----------------------------------------------------------------------------------------------------------------------------
 # Type / Enum / Cloth Object
 # -----------------------------------------------------------------------------------------------------------------------------
-$(CLOTH_OBJ1): $(CLOTH_SRC1) $(CLOTH_HDR1)
+$(CLOTH_OBJ1): $(CLOTH_SRC1) $(DF_CLOTH1)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC1) -o $(CLOTH_OBJ1)
 	
-$(CLOTH_OBJ2): $(CLOTH_SRC2) $(CLOTH_HDR2)
+$(CLOTH_OBJ2): $(CLOTH_SRC2) $(DF_CLOTH2)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC2) -o $(CLOTH_OBJ2)
 
-$(CLOTH_OBJ3): $(CLOTH_SRC3) $(CLOTH_HDR3)
+$(CLOTH_OBJ3): $(CLOTH_SRC3) $(DF_CLOTH3)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC3) -o $(CLOTH_OBJ3)
 
-$(CLOTH_OBJ4): $(CLOTH_SRC4) $(CLOTH_HDR4)
+$(CLOTH_OBJ4): $(CLOTH_SRC4) $(DF_CLOTH4)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC4) -o $(CLOTH_OBJ4)
 
-$(CLOTH_OBJ5): $(CLOTH_SRC5) $(CLOTH_HDR5)
+$(CLOTH_OBJ5): $(CLOTH_SRC5) $(DF_CLOTH5)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC5) -o $(CLOTH_OBJ5)
 
-$(CLOTH_OBJ6): $(CLOTH_SRC6) $(CLOTH_HDR6)
+$(CLOTH_OBJ6): $(CLOTH_SRC6) $(DF_CLOTH6)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC6) -o $(CLOTH_OBJ6)
 	
-$(CLOTH_OBJ7): $(CLOTH_SRC7) $(CLOTH_HDR7)
+$(CLOTH_OBJ7): $(CLOTH_SRC7) $(DF_CLOTH7)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC7) -o $(CLOTH_OBJ7)
 
-$(CLOTH_OBJ8): $(CLOTH_SRC8) $(CLOTH_HDR8)
+$(CLOTH_OBJ8): $(CLOTH_SRC8) $(DF_CLOTH8)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC8) -o $(CLOTH_OBJ8)
 
-$(CLOTH_OBJ9): $(CLOTH_SRC9) $(CLOTH_HDR9)
+$(CLOTH_OBJ9): $(CLOTH_SRC9) $(DF_CLOTH9)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC9) -o $(CLOTH_OBJ9)
 
-$(CLOTH_OBJ10): $(CLOTH_SRC10) $(CLOTH_HDR10)
+$(CLOTH_OBJ10): $(CLOTH_SRC10) $(DF_CLOTH10)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC10) -o $(CLOTH_OBJ10)
 
-$(CLOTH_OBJ11): $(CLOTH_SRC11) $(CLOTH_HDR11)
+$(CLOTH_OBJ11): $(CLOTH_SRC11) $(DF_CLOTH11)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC11) -o $(CLOTH_OBJ11)
 	
-$(CLOTH_OBJ12): $(CLOTH_SRC12) $(CLOTH_HDR12)
+$(CLOTH_OBJ12): $(CLOTH_SRC12) $(DF_CLOTH12)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC12) -o $(CLOTH_OBJ12)
 
-$(CLOTH_OBJ13): $(CLOTH_SRC13) $(CLOTH_HDR13)
+$(CLOTH_OBJ13): $(CLOTH_SRC13) $(DF_CLOTH13)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC13) -o $(CLOTH_OBJ13)
 
-$(CLOTH_OBJ14): $(CLOTH_SRC14) $(CLOTH_HDR14)
+$(CLOTH_OBJ14): $(CLOTH_SRC14) $(DF_CLOTH14)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC14) -o $(CLOTH_OBJ14)
 
-$(CLOTH_OBJ15): $(CLOTH_SRC15) $(CLOTH_HDR15)
+$(CLOTH_OBJ15): $(CLOTH_SRC15) $(DF_CLOTH15)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC15) -o $(CLOTH_OBJ15)
 
-$(CLOTH_OBJ16): $(CLOTH_SRC16) $(CLOTH_HDR16)
+$(CLOTH_OBJ16): $(CLOTH_SRC16) $(DF_CLOTH16)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC16) -o $(CLOTH_OBJ16)
 
-$(CLOTH_OBJ17): $(CLOTH_SRC17) $(CLOTH_HDR17)
+$(CLOTH_OBJ17): $(CLOTH_SRC17) $(DF_CLOTH17)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC17) -o $(CLOTH_OBJ17)
 
-$(CLOTH_OBJ18): $(CLOTH_SRC18) $(CLOTH_HDR18)
+$(CLOTH_OBJ18): $(CLOTH_SRC18) $(DF_CLOTH18)
 	$(CC) $(OPTIMIZE) -c $(CLOTH_SRC18) -o $(CLOTH_OBJ18)
 # -----------------------------------------------------------------------------------------------------------------------------
 # Type / Struct Object
 # -----------------------------------------------------------------------------------------------------------------------------
-$(STRUCT_OBJ1): $(STRUCT_SRC1) $(STRUCT_HDR1)
+$(STRUCT_OBJ1): $(STRUCT_SRC1) $(DF_STRUCT1)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC1) -o $(STRUCT_OBJ1)
 
-$(STRUCT_OBJ2): $(STRUCT_SRC2) $(STRUCT_HDR2)
+$(STRUCT_OBJ2): $(STRUCT_SRC2) $(DF_STRUCT2)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC2) -o $(STRUCT_OBJ2)
 
-$(STRUCT_OBJ3): $(STRUCT_SRC3) $(STRUCT_HDR3)
+$(STRUCT_OBJ3): $(STRUCT_SRC3) $(DF_STRUCT3)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC3) -o $(STRUCT_OBJ3)
 
-$(STRUCT_OBJ4): $(STRUCT_SRC4) $(STRUCT_HDR4)
+$(STRUCT_OBJ4): $(STRUCT_SRC4) $(DF_STRUCT4)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC4) -o $(STRUCT_OBJ4)
+
+$(STRUCT_OBJ5): $(STRUCT_SRC5) $(DF_STRUCT5)
+	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC5) -o $(STRUCT_OBJ5)
 # -----------------------------------------------------------------------------------------------------------------------------
 # Type / Types Object
 # -----------------------------------------------------------------------------------------------------------------------------
-$(TYPES_OBJ1): $(TYPES_SRC1) $(TYPES_HDR1)
+$(TYPES_OBJ1): $(TYPES_SRC1) $(DF_TYPES1)
 	$(CC) $(OPTIMIZE) -c $(TYPES_SRC1) -o $(TYPES_OBJ1)
 # -----------------------------------------------------------------------------------------------------------------------------
 # Type / Wrapper Object
 # -----------------------------------------------------------------------------------------------------------------------------
-$(WRAPPER_OBJ1): $(WRAPPER_SRC1) $(WRAPPER_HDR1)
+$(WRAPPER_OBJ1): $(WRAPPER_SRC1) $(DF_WRAPPER1)
 	$(CC) $(OPTIMIZE) -c $(WRAPPER_SRC1) -o $(WRAPPER_OBJ1)
 
-$(WRAPPER_OBJ2): $(WRAPPER_SRC2) $(WRAPPER_HDR2)
+$(WRAPPER_OBJ2): $(WRAPPER_SRC2) $(DF_WRAPPER2)
 	$(CC) $(OPTIMIZE) -c $(WRAPPER_SRC2) -o $(WRAPPER_OBJ2)
 # -----------------------------------------------------------------------------------------------------------------------------
 
