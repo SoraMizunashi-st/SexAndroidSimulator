@@ -72,7 +72,7 @@ SAS::F_CharacterClothes& SAS::F_CharacterClothes::setNavelAccessory( SAS::E_CL_N
     return *this;
 }
 
-SAS::F_CharacterClothes& SAS::F_CharacterClothes::setClitorisAccesory( SAS::E_CL_CLITORIS_ACCESSORY  p_ClitorisIndex )
+SAS::F_CharacterClothes& SAS::F_CharacterClothes::setClitorisAccessory( SAS::E_CL_CLITORIS_ACCESSORY  p_ClitorisIndex )
 {
     ClitorisAccessory = p_ClitorisIndex;
     return *this;
@@ -264,7 +264,7 @@ SAS::E_CL_NAVEL_ACCESSORY SAS::F_CharacterClothes::getNavelAccessory() const
     return NavelAccessory;
 }
 
-SAS::E_CL_CLITORIS_ACCESSORY SAS::F_CharacterClothes::getClitorisAccesory() const
+SAS::E_CL_CLITORIS_ACCESSORY SAS::F_CharacterClothes::getClitorisAccessory() const
 {
     return ClitorisAccessory;
 }

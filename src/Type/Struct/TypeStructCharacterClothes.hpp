@@ -195,7 +195,7 @@ public:
     F_CharacterClothes& setNippleAccessoryLeft( E_CL_NIPPLE_ACCESSORY  p_NippleAccessoryIndex );
     F_CharacterClothes& setNippleAccessoryRight( E_CL_NIPPLE_ACCESSORY  p_NippleAccessoryIndex );
     F_CharacterClothes& setNavelAccessory( E_CL_NAVEL_ACCESSORY  p_NavelAccessoryIndex );
-    F_CharacterClothes& setClitorisAccesory( E_CL_CLITORIS_ACCESSORY  p_ClitorisIndex );
+    F_CharacterClothes& setClitorisAccessory( E_CL_CLITORIS_ACCESSORY  p_ClitorisIndex );
     F_CharacterClothes& setAnalAccessory( E_CL_ANAL_ACCESSORY p_AnalAccessoryIndex );
     F_CharacterClothes& setBodyPaint( E_CL_BODY_PAINT  p_BodyPaintIndex );
     F_CharacterClothes& setOuterwear( E_CL_OUTERWEAR  p_OuterwearIndex );
@@ -232,7 +232,7 @@ public:
     E_CL_NIPPLE_ACCESSORY getNippleAccessoryLeft() const;
     E_CL_NIPPLE_ACCESSORY getNippleAccessoryRight() const;
     E_CL_NAVEL_ACCESSORY getNavelAccessory() const;
-    E_CL_CLITORIS_ACCESSORY getClitorisAccesory() const;
+    E_CL_CLITORIS_ACCESSORY getClitorisAccessory() const;
     E_CL_ANAL_ACCESSORY getAnalAccessory() const;
     E_CL_BODY_PAINT getBodyPaint() const;
     E_CL_OUTERWEAR getOuterwear() const;
