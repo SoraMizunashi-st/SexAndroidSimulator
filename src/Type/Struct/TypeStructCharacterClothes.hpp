@@ -109,6 +109,7 @@ namespace SAS
 {
 
 constexpr uint8_t CL_NAKED = 0;
+constexpr uint8_t CL_NONE  = 255;
 
 struct F_CharacterClothes
 {
