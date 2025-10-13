@@ -3,6 +3,7 @@
 
 SAS::F_ConfigAndroidData::F_ConfigAndroidData()
     : Sex(E_SexType::UNKNOWN)
+    , Cloth()
     , ErogenousParam(static_cast<size_t>(E_ErogenousZoneName::LIST_SIZE) , { E_ErogenousZoneName::UNKNOWN , 0 , 0 } )
 {
 

@@ -56,8 +56,8 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Include Guarde
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#ifndef TYPE_STRUCT_CHARACTER_CLOTHES_HPP
-#define TYPE_STRUCT_CHARACTER_CLOTHES_HPP
+#ifndef TYPE_ENUM_CLOTH_CLITORIS_ACCESSORY_HPP
+#define TYPE_ENUM_CLOTH_CLITORIS_ACCESSORY_HPP
 // -------------------------------------------------------------------------------------------------------------------------------------//
 #ifndef __SAS_BUILD__
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -80,32 +80,7 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Custom Object Header
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#include "../Enum/Cloth/TypeEnumClothHeadAccessory.hpp"
-#include "../Enum/Cloth/TypeEnumClothHairStyle.hpp"
-#include "../Enum/Cloth/TypeEnumClothFaceAccessory.hpp"
-#include "../Enum/Cloth/TypeEnumClothEarring.hpp"
-#include "../Enum/Cloth/TypeEnumClothNippleAccessory.hpp"
-#include "../Enum/Cloth/TypeEnumClothNavelAccessory.hpp"
-#include "../Enum/Cloth/TypeEnumClothClitorisAccessory.hpp"
-#include "../Enum/Cloth/TypeEnumClothAnalAccessory.hpp"
-#include "../Enum/Cloth/TypeEnumClothBodyPaint.hpp"
-#include "../Enum/Cloth/TypeEnumClothOuterwear.hpp"
-#include "../Enum/Cloth/TypeEnumClothTops.hpp"
-#include "../Enum/Cloth/TypeEnumClothBra.hpp"
-#include "../Enum/Cloth/TypeEnumClothBottoms.hpp"
-#include "../Enum/Cloth/TypeEnumClothUpperArm.hpp"
-#include "../Enum/Cloth/TypeEnumClothHandCuffs.hpp"
-#include "../Enum/Cloth/TypeEnumClothWristAccessory.hpp"
-#include "../Enum/Cloth/TypeEnumClothUpperThigh.hpp"
-#include "../Enum/Cloth/TypeEnumClothLegwear.hpp"
-#include "../Enum/Cloth/TypeEnumClothFootwear.hpp"
 
-#include "../Enum/Cloth/TypeEnumClothNeckAccessory.hpp"
-#include "../Enum/Cloth/TypeEnumClothWaistAccessory.hpp"
-#include "../Enum/Cloth/TypeEnumClothOtherAccessory.hpp"
-
-
-#include "../Enum/Cloth/TypeEnumClothPanty.hpp"
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
 
@@ -118,9 +93,8 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Standard Library Header
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#include <string>  // use <string>
-
 #include <cstdint> // use <uint8_t>
+
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -129,62 +103,14 @@
 namespace SAS
 {
 
-constexpr uint8_t CL_NAKED = 0;
-constexpr uint8_t CL_NONE  = 255;
-
-struct F_CharacterClothes
+enum class E_CL_CLITORIS_ACCESSORY : uint8_t
 {
-    uint8_t DUMMY_PARAM; // To Initialize Dummy
-    // === Head & Face (頭部・顔) ===
-    E_CL_HEAD_ACCESSORY HeadAccessory1;     // ヘアバンド、帽子などの主要アクセサリー
-    E_CL_HEAD_ACCESSORY HeadAccessory2;     // ヘッドアクセサリの2番目のスロット
-    E_CL_HAIR_STYLE HairStyle;          // 髪型（モデル/テクスチャID）
-    E_CL_FACE_ACCESSORY FaceAccessory1;     // 眼鏡、マスク、主要な顔の装飾
-    E_CL_FACE_ACCESSORY FaceAccessory2;     // フェイスペイント、タトゥーなど
+    NAKED                 = 0 ,
 
-    // === Body Attachments (身体装着物/ピアスなど) ===
-    E_CL_EARRING EarringLeft;        // 耳のアクセサリー（ピアス、イヤリング）
-    E_CL_EARRING EarringRight;       // 耳のアクセサリー（ピアス、イヤリング）
-    E_CL_NIPPLE_ACCESSORY NipplePiercingLeft; // 乳首の装飾/アクセサリー
-    E_CL_NIPPLE_ACCESSORY NipplePiercingRight;// 乳首の装飾/アクセサリー
-    E_CL_NAVEL_ACCESSORY NavelPiercing;      // へそ（BellyButton）の装飾/アクセサリー
-    E_CL_CLITORIS_ACCESSORY ClitorisPiercing;       // 陰核の装飾/アクセサリー (Clitoris)
-    E_CL_ANAL_ACCESSORY AnalAccessory;      // アナルの装飾/アクセサリー (Anal)
-    E_CL_BODY_PAINT BodyPaint;
 
-    // === Upper Body Apparel (上半身のアパレル) ===
-    E_CL_OUTERWEAR Outerwear;          // アウター（コート、ジャケット）
-    E_CL_TOPS Tops;                // トップス、シャツ、セーター
-    E_CL_BRA Bra;                // 上の肌着、ブラジャー、インナー
-
-    // === Lower Body Apparel (下半身のアパレル) ===
-    E_CL_BOTTOMS Bottoms;            // ズボン、スカート、主要なボトムス
-    E_CL_PANTY Panties;            // 下の肌着、パンツ（Shortsをより一般的な名称に）
-
-    // === Limbs & Extremities (四肢・末端) ===
-    E_CL_UPPER_ARM UpperArmLeft;       // 左上腕（アームバンドなど）
-    E_CL_UPPER_ARM UpperArmRight;      // 右上腕（アームバンドなど）
-    E_CL_HAND_CUFFS HandCuffsLeft;       // 左手（グローブ、ミトンなど）
-    E_CL_HAND_CUFFS HandCuffsRight;      // 右手（グローブ、ミトンなど）
-    E_CL_WRIST_ACCESSORY WristAccessoryLeft; // 左手首（腕時計、ブレスレット）
-    E_CL_WRIST_ACCESSORY WristAccessoryRight;// 右手首（腕時計、ブレスレット）
-
-    // === Legs & Feet (脚部・足) ===
-    E_CL_UPPER_THIGH UpperThighLeft;     // 左太もも（ガーターベルト、レッグリング）
-    E_CL_UPPER_THIGH UpperThighRight;    // 右太もも（ガーターベルト、レッグリング）
-    E_CL_LEGWEAR LegwearLeft;        // 左脚（靴下、ストッキング、タイツ）
-    E_CL_LEGWEAR LegwearRight;       // 右脚（靴下、ストッキング、タイツ）
-    E_CL_FOOTWEAR FootwearLeft;       // 左足（靴、ブーツ）
-    E_CL_FOOTWEAR FootwearRight;      // 右足（靴、ブーツ）
-
-    // === Non-Limb Accessories (非身体部位アクセサリー) ===
-    E_CL_NECK_ACCESSORY NeckAccessory;      // ネックレス、チョーカー、スカーフ（新規追加）
-    E_CL_WAIST_ACCESSORY WaistAccessory;     // ベルト、腰回りのチェーン（新規追加）
-    E_CL_OTHER_ACCESSORY OtherAccessory;  // 天使の輪、羽など（部位に縛られない大きな装飾）
+    LIST_SIZE ,
+    NONE_ID ,
 };
-
-
-constexpr F_CharacterClothes CL_Preset_Naked = { CL_NAKED };
 
 
 }

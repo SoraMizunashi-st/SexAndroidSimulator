@@ -1,0 +1,1 @@
+#include "./TypeEnumClothUpperArm.hpp"
