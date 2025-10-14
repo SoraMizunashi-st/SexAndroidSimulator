@@ -105,13 +105,14 @@ namespace SAS
 
 enum class E_ACTION_ID : int
 {
-    NONE      =     0 ,
-    FAILED    =     1 ,
+    ACT_NONE      =     0 ,
+    ACT_FAILED    =     1 ,
 
-    EAT       = 10000 ,
+    ACT_EAT       = 10000 ,
 
-    SLEEP     = 20000 ,
+    ACT_SLEEP     = 20000 ,
 
+    ACT_JOB_SEXUAL_SERVICE = 200000 ,
     OUT_OF_LIST,
 };
 

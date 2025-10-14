@@ -122,22 +122,69 @@ template <typename Type_Integer >
 requires std::integral<Type_Integer>
 using T_IntegerTensor    = T_BasicTensor<Type_Integer>;
 
-using T_TokenIDsTensor  = T_IntegerTensor<int>;
-
 template <typename Type_FloatingPoint >
 requires std::floating_point<Type_FloatingPoint>
 using T_FloatingTensor    = T_BasicTensor<Type_FloatingPoint>;
 
+template <typename Type_String >
+using T_StringTensor    = T_BasicTensor<Type_String>;
+
+constexpr int DIMENSION_4D     =    4;
+constexpr int DIMENSION_8D     =    8;
+constexpr int DIMENSION_16D    =   16;
+constexpr int DIMENSION_32D    =   32;
+constexpr int DIMENSION_64D    =   64;
+constexpr int DIMENSION_128D   =  128;
+constexpr int DIMENSION_256D   =  256;
+constexpr int DIMENSION_512D   =  512;
+constexpr int DIMENSION_1024D  = 1024;
+
+
+using T_TokenIDsTensor  = T_IntegerTensor<int>;
+using T_VocabIDsTensor  = T_IntegerTensor<int>;
+
+using T_TokenTextTensor  = T_StringTensor<std::string>;
+using T_VocabTextTensor  = T_StringTensor<std::string>;
+
+constexpr int VOCAB_MIN_TOKENS_SHORT  = 32000;
+constexpr int VOCAB_MAX_TOKENS_SHORT  = 64000;
+
+constexpr int VOCAB_MIN_TOKENS_MIDIUM = VOCAB_MAX_TOKENS_SHORT;
+constexpr int VOCAB_MAN_TOKENS_MIDIUM = 120000;
+
+constexpr int VOCAB_MIN_TOKENS_LARGE  = VOCAB_MAN_TOKENS_MIDIUM;
+constexpr int VOCAB_MAX_TOKENS_LARGE  = 240000;
+
+constexpr int VOCAB_WEIGHT_SHORT_8D   = VOCAB_MAX_TOKENS_SHORT * DIMENSION_8D;
+constexpr int VOCAB_WEIGHT_SHORT_32D  = VOCAB_MAX_TOKENS_SHORT * DIMENSION_32D;
+constexpr int VOCAB_WEIGHT_SHORT_512D = VOCAB_MAX_TOKENS_SHORT * DIMENSION_512D;
+
+
+using T_ActionTensor      = T_FloatingTensor<float>;
+
+constexpr int ACTION_ID_MAX = 250000;
+
 using T_PersonalityTensor = T_FloatingTensor<float>;
+
+constexpr int PERSONALITY_INDEX_MAX = 512;
+constexpr int PERSONALITY_DIMENTION_8D   = PERSONALITY_INDEX_MAX * DIMENSION_8D;
+constexpr int PERSONALITY_DIMENTION_32D  = PERSONALITY_INDEX_MAX * DIMENSION_32D;
+constexpr int PERSONALITY_DIMENTION_512D = PERSONALITY_INDEX_MAX * DIMENSION_512D;
+
 using T_EmotionTensor     = T_FloatingTensor<float>;
 
+constexpr int EMOTION_DIMENSION_8D   =   8;
+constexpr int EMOTION_DIMENSION_32D  =  32;
+constexpr int EMOTION_DIMENSION_512D = 512;
 
-constexpr int EMOTION_DIMENSION_8D  = 8;
-constexpr int EMOTION_DIMENSION_32D = 32;
+constexpr int EMOTION_DIMENSION_8Dx8D        = EMOTION_DIMENSION_8D  * EMOTION_DIMENSION_8D;
+constexpr int EMOTION_HIDDEN_DIMENTION_8D_4D = EMOTION_DIMENSION_8D  * DIMENSION_4D;
 
-constexpr int EMOTION_DIMENSION_8Dx8D   = EMOTION_DIMENSION_8D  * EMOTION_DIMENSION_8D;
-constexpr int EMOTION_DIMENSION_32Dx32D = EMOTION_DIMENSION_32D * EMOTION_DIMENSION_32D;
+constexpr int EMOTION_DIMENSION_32Dx32D         = EMOTION_DIMENSION_32D * EMOTION_DIMENSION_32D;
+constexpr int EMOTION_HIDDEN_DIMENSION_32Dx4D   = EMOTION_DIMENSION_32D * DIMENSION_4D;
 
+constexpr int EMOTION_DIMENSION_512Dx512D       = EMOTION_DIMENSION_512D * EMOTION_DIMENSION_512D;
+constexpr int EMOTION_HIDDEN__DIMENSION_512Dx4D = EMOTION_DIMENSION_512D * DIMENSION_4D;
 
 
 }

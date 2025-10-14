@@ -225,8 +225,18 @@ STRUCT_NAME5 = TypeStructWallet
 STRUCT_SRC5  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME5)$(CPPSF)
 STRUCT_HDR5  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME5)$(HPPSF)
 STRUCT_OBJ5  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME5)$(OBJSF)
+
+STRUCT_NAME6 = TypeStructLifeTime
+STRUCT_SRC6  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME6)$(CPPSF)
+STRUCT_HDR6  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME6)$(HPPSF)
+STRUCT_OBJ6  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME6)$(OBJSF)
+
+STRUCT_NAME7 = TypeStructGreed
+STRUCT_SRC7  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME7)$(CPPSF)
+STRUCT_HDR7  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME7)$(HPPSF)
+STRUCT_OBJ7  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME7)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
-STRUCT_OBJ = $(STRUCT_OBJ1) $(STRUCT_OBJ2) $(STRUCT_OBJ3) $(STRUCT_OBJ4) $(STRUCT_OBJ5)
+STRUCT_OBJ = $(STRUCT_OBJ1) $(STRUCT_OBJ2) $(STRUCT_OBJ3) $(STRUCT_OBJ4) $(STRUCT_OBJ5) $(STRUCT_OBJ6) $(STRUCT_OBJ7)
 # -----------------------------------------------------------------------------------------------------------------------------
 TYPES_DIR = Types/
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -308,10 +318,12 @@ DF_STRUCT2  = $(STRUCT_HDR2)
 DF_STRUCT3  = $(STRUCT_HDR3)
 DF_STRUCT4  = $(STRUCT_HDR4) $(CLOTH_HDF_ALL)
 DF_STRUCT5  = $(STRUCT_HDR5)
+DF_STRUCT6  = $(STRUCT_HDR6)
+DF_STRUCT7  = $(STRUCT_HDR7)
 # -----------------------------------------------------------------------------------------------------------------------------
 DF_TYPES1   = $(TYPES_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_WRAPPER1 = $(WRAPPER_HDR1) $(STRUCT_HDF1) $(STRUCT_HDF2) $(STRUCT_HDF5)
+DF_WRAPPER1 = $(WRAPPER_HDR1) $(STRUCT_HDF1) $(STRUCT_HDF2) $(STRUCT_HDF5) $(STRUCT_HDF6) $(STRUCT_HDF7)
 DF_WRAPPER2 = $(WRAPPER_HDR2)
 # -----------------------------------------------------------------------------------------------------------------------------
 
@@ -458,6 +470,12 @@ $(STRUCT_OBJ4): $(STRUCT_SRC4) $(DF_STRUCT4)
 
 $(STRUCT_OBJ5): $(STRUCT_SRC5) $(DF_STRUCT5)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC5) -o $(STRUCT_OBJ5)
+
+$(STRUCT_OBJ6): $(STRUCT_SRC6) $(DF_STRUCT6)
+	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC6) -o $(STRUCT_OBJ6)
+
+$(STRUCT_OBJ7): $(STRUCT_SRC7) $(DF_STRUCT7)
+	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC7) -o $(STRUCT_OBJ7)
 # -----------------------------------------------------------------------------------------------------------------------------
 # Type / Types Object
 # -----------------------------------------------------------------------------------------------------------------------------
