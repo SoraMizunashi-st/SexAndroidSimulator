@@ -47,6 +47,47 @@ CORE_OBJ1  = $(OBJ_DIR)$(CORE_DIR)$(CORE_NAME1)$(OBJSF)
 CORE_OBJ = $(CORE_OBJ1)
 # -----------------------------------------------------------------------------------------------------------------------------
 #
+# Math Object
+#
+# -----------------------------------------------------------------------------------------------------------------------------
+
+MATH_DIR  = Math/
+MATH_NAME1 = Math
+MATH_SRC1  = $(SRC_DIR)$(MATH_DIR)$(MATH_NAME1)$(CPPSF)
+MATH_HDR1  = $(SRC_DIR)$(MATH_DIR)$(MATH_NAME1)$(HPPSF)
+MATH_OBJ1  = $(OBJ_DIR)$(MATH_DIR)$(MATH_NAME1)$(OBJSF)
+# -----------------------------------------------------------------------------------------------------------------------------
+MATH_CORE_OBJ = $(MATH_OBJ1)
+# -----------------------------------------------------------------------------------------------------------------------------
+#
+# Math / Matrix Object
+#
+# -----------------------------------------------------------------------------------------------------------------------------
+
+MTX_DIR  = Matrix/
+MTX_NAME1 = MathMatrix
+MTX_SRC1  = $(SRC_DIR)$(MATH_DIR)$(MTX_DIR)$(MTX_NAME1)$(CPPSF)
+MTX_HDR1  = $(SRC_DIR)$(MATH_DIR)$(MTX_DIR)$(MTX_NAME1)$(HPPSF)
+MTX_OBJ1  = $(OBJ_DIR)$(MATH_DIR)$(MTX_DIR)$(MTX_NAME1)$(OBJSF)
+# -----------------------------------------------------------------------------------------------------------------------------
+MTX_OBJ = $(MTX_OBJ1)
+# -----------------------------------------------------------------------------------------------------------------------------
+#
+# Math / Utils Object
+#
+# -----------------------------------------------------------------------------------------------------------------------------
+
+MUTL_DIR  = Utils/
+MUTL_NAME1 = MathUtils
+MUTL_SRC1  = $(SRC_DIR)$(MATH_DIR)$(MUTL_DIR)$(MUTL_NAME1)$(CPPSF)
+MUTL_HDR1  = $(SRC_DIR)$(MATH_DIR)$(MUTL_DIR)$(MUTL_NAME1)$(HPPSF)
+MUTL_OBJ1  = $(OBJ_DIR)$(MATH_DIR)$(MUTL_DIR)$(MUTL_NAME1)$(OBJSF)
+# -----------------------------------------------------------------------------------------------------------------------------
+MUTL_OBJ = $(MUTL_OBJ1)
+# -----------------------------------------------------------------------------------------------------------------------------
+MATH_OBJ = $(MATH_CORE_OBJ) $(MTX_OBJ) $(MUTL_OBJ)
+# -----------------------------------------------------------------------------------------------------------------------------
+#
 # Socket Object
 #
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -235,8 +276,19 @@ STRUCT_NAME7 = TypeStructGreed
 STRUCT_SRC7  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME7)$(CPPSF)
 STRUCT_HDR7  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME7)$(HPPSF)
 STRUCT_OBJ7  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME7)$(OBJSF)
+
+STRUCT_NAME8 = TypeStructItems
+STRUCT_SRC8  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME8)$(CPPSF)
+STRUCT_HDR8  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME8)$(HPPSF)
+STRUCT_OBJ8  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME8)$(OBJSF)
+
+STRUCT_NAME9 = TypeStructPosition
+STRUCT_SRC9  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME9)$(CPPSF)
+STRUCT_HDR9  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME9)$(HPPSF)
+STRUCT_OBJ9  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME9)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
-STRUCT_OBJ = $(STRUCT_OBJ1) $(STRUCT_OBJ2) $(STRUCT_OBJ3) $(STRUCT_OBJ4) $(STRUCT_OBJ5) $(STRUCT_OBJ6) $(STRUCT_OBJ7)
+STRUCT_OBJ  = $(STRUCT_OBJ1) $(STRUCT_OBJ2) $(STRUCT_OBJ3) $(STRUCT_OBJ4) $(STRUCT_OBJ5)
+STRUCT_OBJ += $(STRUCT_OBJ6) $(STRUCT_OBJ7) $(STRUCT_OBJ8) $(STRUCT_OBJ9)
 # -----------------------------------------------------------------------------------------------------------------------------
 TYPES_DIR = Types/
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -271,7 +323,7 @@ TYPE_OBJ = $(ENUM_OBJ) $(ACT_OBJ) $(CLOTH_OBJ) $(STRUCT_OBJ) $(TYPES_OBJ) $(WRAP
 # All Object
 #
 # -----------------------------------------------------------------------------------------------------------------------------
-OBJ = $(MAIN_OBJ) $(CORE_OBJ) $(SOC_OBJ) $(TYPE_OBJ)
+OBJ = $(MAIN_OBJ) $(CORE_OBJ) $(MATH_OBJ) $(SOC_OBJ) $(TYPE_OBJ)
 SERVER_OBJ = $(SRV_OBJ1)
 
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -279,52 +331,61 @@ SERVER_OBJ = $(SRV_OBJ1)
 # All Object / dependent file
 #
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_MAIN1    = $(MAIN_HDR1) $(CORE_HDR1)
+DF_MAIN1     = $(MAIN_HDR1) $(CORE_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_SRV1     = $(SRV_HDR1)
+DF_SRV1      = $(SRV_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_CORE1    = $(CORE_HDR1) $(SOC_HDR1)  $(WRAPPER_HDR1)
+DF_CORE1     = $(CORE_HDR1) $(SOC_HDR1)  $(WRAPPER_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_SOC1     = $(SOC_HDR1)
+DF_MATH1     = $(MATH_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_ACT1     = $(ACT_HDR1)
+DF_MTX1      = $(MTX_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_ENUM1    = $(ENUM_HDR1)
-DF_ENUM2    = $(ENUM_HDR2)
-DF_ENUM3    = $(ENUM_HDR3)
-DF_ENUM4    = $(ENUM_HDR4)
+DF_MUTL1     = $(MUTL_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_CLOTH1   = $(CLOTH_HDR1)
-DF_CLOTH2   = $(CLOTH_HDR2)
-DF_CLOTH3   = $(CLOTH_HDR3)
-DF_CLOTH4   = $(CLOTH_HDR4)
-DF_CLOTH5   = $(CLOTH_HDR5)
-DF_CLOTH6   = $(CLOTH_HDR6)
-DF_CLOTH7   = $(CLOTH_HDR7)
-DF_CLOTH8   = $(CLOTH_HDR8)
-DF_CLOTH9   = $(CLOTH_HDR9)
-DF_CLOTH10  = $(CLOTH_HDR10)
-DF_CLOTH11  = $(CLOTH_HDR11)
-DF_CLOTH12  = $(CLOTH_HDR12)
-DF_CLOTH13  = $(CLOTH_HDR13)
-DF_CLOTH14  = $(CLOTH_HDR14)
-DF_CLOTH15  = $(CLOTH_HDR15)
-DF_CLOTH16  = $(CLOTH_HDR16)
-DF_CLOTH17  = $(CLOTH_HDR17)
-DF_CLOTH18  = $(CLOTH_HDR18)
+DF_SOC1      = $(SOC_HDR1)
+# ----------------------------------------------------------S-------------------------------------------------------------------
+DF_ACT1      = $(ACT_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_STRUCT1  = $(STRUCT_HDR1)
-DF_STRUCT2  = $(STRUCT_HDR2)
-DF_STRUCT3  = $(STRUCT_HDR3)
-DF_STRUCT4  = $(STRUCT_HDR4) $(CLOTH_HDF_ALL)
-DF_STRUCT5  = $(STRUCT_HDR5)
-DF_STRUCT6  = $(STRUCT_HDR6)
-DF_STRUCT7  = $(STRUCT_HDR7)
+DF_ENUM1     = $(ENUM_HDR1)
+DF_ENUM2     = $(ENUM_HDR2)
+DF_ENUM3     = $(ENUM_HDR3)
+DF_ENUM4     = $(ENUM_HDR4)
+# -----------------------------------------------------------------------------------------------------------------------------
+DF_CLOTH1    = $(CLOTH_HDR1)
+DF_CLOTH2    = $(CLOTH_HDR2)
+DF_CLOTH3    = $(CLOTH_HDR3)
+DF_CLOTH4    = $(CLOTH_HDR4)
+DF_CLOTH5    = $(CLOTH_HDR5)
+DF_CLOTH6    = $(CLOTH_HDR6)
+DF_CLOTH7    = $(CLOTH_HDR7)
+DF_CLOTH8    = $(CLOTH_HDR8)
+DF_CLOTH9    = $(CLOTH_HDR9)
+DF_CLOTH10   = $(CLOTH_HDR10)
+DF_CLOTH11   = $(CLOTH_HDR11)
+DF_CLOTH12   = $(CLOTH_HDR12)
+DF_CLOTH13   = $(CLOTH_HDR13)
+DF_CLOTH14   = $(CLOTH_HDR14)
+DF_CLOTH15   = $(CLOTH_HDR15)
+DF_CLOTH16   = $(CLOTH_HDR16)
+DF_CLOTH17   = $(CLOTH_HDR17)
+DF_CLOTH18   = $(CLOTH_HDR18)
+# -----------------------------------------------------------------------------------------------------------------------------
+DF_STRUCT1   = $(STRUCT_HDR1)
+DF_STRUCT2   = $(STRUCT_HDR2)
+DF_STRUCT3   = $(STRUCT_HDR3)
+DF_STRUCT4   = $(STRUCT_HDR4) $(CLOTH_HDF_ALL)
+DF_STRUCT5   = $(STRUCT_HDR5)
+DF_STRUCT6   = $(STRUCT_HDR6)
+DF_STRUCT7   = $(STRUCT_HDR7)
+DF_STRUCT8   = $(STRUCT_HDR8)
+DF_STRUCT9   = $(STRUCT_HDR9)
 # -----------------------------------------------------------------------------------------------------------------------------
 DF_TYPES1   = $(TYPES_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_WRAPPER1 = $(WRAPPER_HDR1) $(STRUCT_HDF1) $(STRUCT_HDF2) $(STRUCT_HDF5) $(STRUCT_HDF6) $(STRUCT_HDF7)
-DF_WRAPPER2 = $(WRAPPER_HDR2)
+DF_WRAPPER1  = $(WRAPPER_HDR1) 
+DF_WRAPPER1 += $(STRUCT_HDF1) $(STRUCT_HDF2) $(STRUCT_HDF5) $(STRUCT_HDF6) $(STRUCT_HDF7) $(STRUCT_HDR8)
+DF_WRAPPER2  = $(WRAPPER_HDR2)
 # -----------------------------------------------------------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -365,6 +426,24 @@ $(SRV_OBJ1): $(SRV_SRC1) $(DF_SRV1)
 $(CORE_OBJ1): $(CORE_SRC1) $(DF_CORE1)
 	$(CC) $(OPTIMIZE) -c $(CORE_SRC1) -o $(CORE_OBJ1)
 
+# -----------------------------------------------------------------------------------------------------------------------------
+#
+# Math Object
+#
+# -----------------------------------------------------------------------------------------------------------------------------
+$(MATH_OBJ1): $(MATH_SRC1) $(DF_MATH1)
+	$(CC) $(OPTIMIZE) -c $(MATH_SRC1) -o $(MATH_OBJ1)
+
+# -----------------------------------------------------------------------------------------------------------------------------
+# Math / Matrix Object
+# -----------------------------------------------------------------------------------------------------------------------------
+$(MTX_OBJ1): $(MTX_SRC1) $(DF_MTX1)
+	$(CC) $(OPTIMIZE) -c $(MTX_SRC1) -o $(MTX_OBJ1)
+# -----------------------------------------------------------------------------------------------------------------------------
+# Math / Utils Object
+# -----------------------------------------------------------------------------------------------------------------------------
+$(MUTL_OBJ1): $(MUTL_SRC1) $(DF_MUTL1)
+	$(CC) $(OPTIMIZE) -c $(MUTL_SRC1) -o $(MUTL_OBJ1)
 # -----------------------------------------------------------------------------------------------------------------------------
 #
 # Socket Object
@@ -476,6 +555,12 @@ $(STRUCT_OBJ6): $(STRUCT_SRC6) $(DF_STRUCT6)
 
 $(STRUCT_OBJ7): $(STRUCT_SRC7) $(DF_STRUCT7)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC7) -o $(STRUCT_OBJ7)
+
+$(STRUCT_OBJ8): $(STRUCT_SRC8) $(DF_STRUCT8)
+	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC8) -o $(STRUCT_OBJ8)
+
+$(STRUCT_OBJ9): $(STRUCT_SRC9) $(DF_STRUCT9)
+	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC9) -o $(STRUCT_OBJ9)
 # -----------------------------------------------------------------------------------------------------------------------------
 # Type / Types Object
 # -----------------------------------------------------------------------------------------------------------------------------

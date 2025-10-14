@@ -56,8 +56,8 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Include Guarde
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#ifndef TYPE_ANDROID_HPP
-#define TYPE_ANDROID_HPP
+#ifndef TYPE_STRUCT_POSITION_HPP
+#define TYPE_STRUCT_POSITION_HPP
 // -------------------------------------------------------------------------------------------------------------------------------------//
 #ifndef __SAS_BUILD__
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -80,20 +80,7 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Custom Object Header
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#include "../Enum/TypeEnumErogenousZone.hpp"
-#include "../Enum/TypeEnumRole.hpp"
-#include "../Enum/TypeEnumSex.hpp"
 
-#include "../Struct/TypeStructConfigAndroidData.hpp"
-#include "../Struct/TypeStructErogenousZone.hpp"
-#include "../Struct/TypeStructWallet.hpp"
-#include "../Struct/TypeStructLifeTime.hpp"
-#include "../Struct/TypeStructGreed.hpp"
-#include "../Struct/TypeStructItems.hpp"
-
-#include "../Types/TypesUsingTensor.hpp"
-
-#include "./TypePersonalityTensor.hpp"
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
 
@@ -106,16 +93,10 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Standard Library Header
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#include <iostream>
-
 #include <string>  // use <string>
+
 #include <cstdint> // use <uint8_t>
-#include <cstddef> // use <size_t>
-
-#include <vector>   // use < vector >
-#include <memory>   // use < std::unique_ptr , std::make_uniquer >
 // -------------------------------------------------------------------------------------------------------------------------------------//
-
 
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Starting NameSpace { SAS : SexAndroidSimulator }
@@ -123,49 +104,81 @@
 namespace SAS
 {
 
-
-class TypeAndroid
+struct F_Pos2D
 {
+    float x;
+    float y;
+
 public:
-    TypeAndroid();
-    ~TypeAndroid() = default;
-    
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-    // Accessor / Setter Method
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-    // Accessor / Getter Method
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-    int getLifeTime();
-    int getWalletBasicMoney();
-
-    int getDesireEat();
-    int getDesireSleep();
-    int getDesireSexual();
-
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-    // Accessor / Adder Method
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-    TypeAndroid& AddLifeTime( int AdditionalValue );
-    TypeAndroid& AddWallet( int AdditionalValue ) ;
-    TypeAndroid& AddDesireEat( int AdditionalValue );
-    TypeAndroid& AddDesireSleep( int AdditionalValue );
-    TypeAndroid& AddDesireSexual( int AdditionalValue );
+    F_Pos2D();
 
 private:
-    F_ConfigAndroidData  m_Data;
-    
-    F_LifeTime m_LifeTime;
-    F_Wallet m_Wallet;
-
-    F_Greed m_Greed;
-
-    F_Items m_Items;
-
-    PersonalityTensor m_Personality;
 
 };
+
+struct F_Pos3D
+{
+    float x;
+    float y;
+    float z;
+
+public:
+    F_Pos3D();
+
+private:
+
+};
+
+struct F_Dig2D
+{
+    float x;
+    float y;
+
+public:
+    F_Dig2D();
+
+private:
+
+};
+
+struct F_Dig3D
+{
+    float x;
+    float y;
+    float z;
+
+public:
+    F_Dig3D();
+
+private:
+
+};
+
+struct F_Rad2D
+{
+    float x;
+    float y;
+
+public:
+    F_Rad2D();
+
+private:
+
+};
+
+struct F_Rad3D
+{
+    float x;
+    float y;
+    float z;
+
+public:
+    F_Rad3D();
+
+private:
+
+};
+
 
 }
 // -------------------------------------------------------------------------------------------------------------------------------------//

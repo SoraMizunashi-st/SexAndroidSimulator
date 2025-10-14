@@ -56,8 +56,8 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Include Guarde
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#ifndef TYPE_ANDROID_HPP
-#define TYPE_ANDROID_HPP
+#ifndef TYPE_STRUCT_ITEMS_HPP
+#define TYPE_STRUCT_ITEMS_HPP
 // -------------------------------------------------------------------------------------------------------------------------------------//
 #ifndef __SAS_BUILD__
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -80,20 +80,7 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Custom Object Header
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#include "../Enum/TypeEnumErogenousZone.hpp"
-#include "../Enum/TypeEnumRole.hpp"
-#include "../Enum/TypeEnumSex.hpp"
 
-#include "../Struct/TypeStructConfigAndroidData.hpp"
-#include "../Struct/TypeStructErogenousZone.hpp"
-#include "../Struct/TypeStructWallet.hpp"
-#include "../Struct/TypeStructLifeTime.hpp"
-#include "../Struct/TypeStructGreed.hpp"
-#include "../Struct/TypeStructItems.hpp"
-
-#include "../Types/TypesUsingTensor.hpp"
-
-#include "./TypePersonalityTensor.hpp"
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
 
@@ -106,16 +93,13 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Standard Library Header
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#include <iostream>
-
 #include <string>  // use <string>
+
 #include <cstdint> // use <uint8_t>
 #include <cstddef> // use <size_t>
 
-#include <vector>   // use < vector >
-#include <memory>   // use < std::unique_ptr , std::make_uniquer >
+#include <array>
 // -------------------------------------------------------------------------------------------------------------------------------------//
-
 
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Starting NameSpace { SAS : SexAndroidSimulator }
@@ -123,49 +107,31 @@
 namespace SAS
 {
 
+constexpr size_t ITEMS_LIST_SIZE = 500;
+constexpr std::string ITEM_DEFAULT_NAME = "DEFAULT";
 
-class TypeAndroid
+struct F_ItemsBasic
 {
+    std::string Name;
+    unsigned int ID;
+    unsigned int Count;
+
 public:
-    TypeAndroid();
-    ~TypeAndroid() = default;
-    
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-    // Accessor / Setter Method
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-    // Accessor / Getter Method
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-    int getLifeTime();
-    int getWalletBasicMoney();
-
-    int getDesireEat();
-    int getDesireSleep();
-    int getDesireSexual();
-
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-    // Accessor / Adder Method
-    // ---------------------------------------------------------------------------------------------------------------------------------//
-    TypeAndroid& AddLifeTime( int AdditionalValue );
-    TypeAndroid& AddWallet( int AdditionalValue ) ;
-    TypeAndroid& AddDesireEat( int AdditionalValue );
-    TypeAndroid& AddDesireSleep( int AdditionalValue );
-    TypeAndroid& AddDesireSexual( int AdditionalValue );
+    F_ItemsBasic( const std::string p_ItemName = SAS::ITEM_DEFAULT_NAME , unsigned int p_ItemID = 0 , unsigned int p_ItemCount = 0 );
 
 private:
-    F_ConfigAndroidData  m_Data;
+};
+
+struct F_Items
+{
+    std::array<F_ItemsBasic , ITEMS_LIST_SIZE > Items;
+
+public:
     
-    F_LifeTime m_LifeTime;
-    F_Wallet m_Wallet;
-
-    F_Greed m_Greed;
-
-    F_Items m_Items;
-
-    PersonalityTensor m_Personality;
+private:
 
 };
+
 
 }
 // -------------------------------------------------------------------------------------------------------------------------------------//

@@ -33,6 +33,11 @@ int SAS::SasCore::MainLoop()
     while( true )
     {
         // ---------------------------------------------------------------------------------------------------------------------------------//
+        // Completion judgment | LifeTime is None Pat.
+        // ---------------------------------------------------------------------------------------------------------------------------------//
+        if( android->getLifeTime() < 0 ){ break; }
+
+        // ---------------------------------------------------------------------------------------------------------------------------------//
         // Log | Minimal resource logging
         // ---------------------------------------------------------------------------------------------------------------------------------//
         std::cout   << " Reaming LifeTimes : " << this->android->getLifeTime()  << "(Vita)"
@@ -74,12 +79,9 @@ int SAS::SasCore::MainLoop()
         // ActionChain | Receipt of Income
         // ---------------------------------------------------------------------------------------------------------------------------------//
 
-        // ---------------------------------------------------------------------------------------------------------------------------------//
-        // Completion judgment | LifeTime is None Pat.
-        // ---------------------------------------------------------------------------------------------------------------------------------//
-        if( android->getLifeTime() <= 0 ){ break; }
 
 
+        //tmp MainActionChain
         this->ResourceCheck().InferenceAction().Result();
 
         // ---------------------------------------------------------------------------------------------------------------------------------//
@@ -118,10 +120,13 @@ SAS::SasCore& SAS::SasCore::Result()
     // ---------------------------------------------------------------------------------------------------------------------------------//
     // tmp Comment | Originally, it implements the function to send data to the server side.
     // ---------------------------------------------------------------------------------------------------------------------------------//
+
+
+#ifdef __DEBUG__
     std::cout << " Result | Desires : Eat (" <<  this->android->getDesireEat()
-              << ")*10 % : Sleep ("          <<  this->android->getDesireSleep()
-              << ")*10 % : Sexual ("         <<  this->android->getDesireSexual()
-              << ")*10 %" << std::endl;
+              << ")pt : Sleep ("          <<  this->android->getDesireSleep()
+              << ")pt : Sexual ("         <<  this->android->getDesireSexual()
+              << ")pt" << std::endl;
 
     std::cout << " Result | Actions Cost [Initial Cost] -> LifeTime : "
               << std::showpos << std::setw(3)
@@ -131,5 +136,7 @@ SAS::SasCore& SAS::SasCore::Result()
     std::cout << " Result | Actions Cost [Income  Cost] -> LifeTime :  +0 Vita / Money :  +0 Pico" << std::endl;
 
     std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++ " << std::endl;
+#endif
+
     return *this;
 }
