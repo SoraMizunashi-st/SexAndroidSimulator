@@ -127,8 +127,13 @@ ENUM_NAME4 = TypeEnumColor
 ENUM_SRC4  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME4)$(CPPSF)
 ENUM_HDR4  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME4)$(HPPSF)
 ENUM_OBJ4  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME4)$(OBJSF)
+
+ENUM_NAME5 = TypeEnumCost
+ENUM_SRC5  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME5)$(CPPSF)
+ENUM_HDR5  = $(SRC_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME5)$(HPPSF)
+ENUM_OBJ5  = $(OBJ_DIR)$(TYPE_DIR)$(ENUM_DIR)$(ENUM_NAME5)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
-ENUM_OBJ  = $(ENUM_OBJ1) $(ENUM_OBJ2) $(ENUM_OBJ3) $(ENUM_OBJ4)
+ENUM_OBJ  = $(ENUM_OBJ1) $(ENUM_OBJ2) $(ENUM_OBJ3) $(ENUM_OBJ4) $(ENUM_OBJ5)
 # -----------------------------------------------------------------------------------------------------------------------------
 ACT_DIR  = Action/
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -286,9 +291,20 @@ STRUCT_NAME9 = TypeStructPosition
 STRUCT_SRC9  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME9)$(CPPSF)
 STRUCT_HDR9  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME9)$(HPPSF)
 STRUCT_OBJ9  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME9)$(OBJSF)
+
+STRUCT_NAME10 = TypeStructSkill
+STRUCT_SRC10  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME10)$(CPPSF)
+STRUCT_HDR10  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME10)$(HPPSF)
+STRUCT_OBJ10  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME10)$(OBJSF)
+
+STRUCT_NAME11 = TypeStructCost
+STRUCT_SRC11  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME11)$(CPPSF)
+STRUCT_HDR11  = $(SRC_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME11)$(HPPSF)
+STRUCT_OBJ11  = $(OBJ_DIR)$(TYPE_DIR)$(STRUCT_DIR)$(STRUCT_NAME11)$(OBJSF)
 # -----------------------------------------------------------------------------------------------------------------------------
 STRUCT_OBJ  = $(STRUCT_OBJ1) $(STRUCT_OBJ2) $(STRUCT_OBJ3) $(STRUCT_OBJ4) $(STRUCT_OBJ5)
-STRUCT_OBJ += $(STRUCT_OBJ6) $(STRUCT_OBJ7) $(STRUCT_OBJ8) $(STRUCT_OBJ9)
+STRUCT_OBJ += $(STRUCT_OBJ6) $(STRUCT_OBJ7) $(STRUCT_OBJ8) $(STRUCT_OBJ9) $(STRUCT_OBJ10)
+STRUCT_OBJ += $(STRUCT_OBJ11)
 # -----------------------------------------------------------------------------------------------------------------------------
 TYPES_DIR = Types/
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -331,11 +347,11 @@ SERVER_OBJ = $(SRV_OBJ1)
 # All Object / dependent file
 #
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_MAIN1     = $(MAIN_HDR1) $(CORE_HDR1)
+DF_MAIN1     = $(MAIN_HDR1) $(CORE_HDR1) 
 # -----------------------------------------------------------------------------------------------------------------------------
 DF_SRV1      = $(SRV_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_CORE1     = $(CORE_HDR1) $(SOC_HDR1)  $(WRAPPER_HDR1)
+DF_CORE1     = $(CORE_HDR1) $(SOC_HDR1)  $(WRAPPER_HDR1) $(ENUM_HDR5)
 # -----------------------------------------------------------------------------------------------------------------------------
 DF_MATH1     = $(MATH_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -344,13 +360,14 @@ DF_MTX1      = $(MTX_HDR1)
 DF_MUTL1     = $(MUTL_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
 DF_SOC1      = $(SOC_HDR1)
-# ----------------------------------------------------------S-------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
 DF_ACT1      = $(ACT_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
 DF_ENUM1     = $(ENUM_HDR1)
 DF_ENUM2     = $(ENUM_HDR2)
 DF_ENUM3     = $(ENUM_HDR3)
 DF_ENUM4     = $(ENUM_HDR4)
+DF_ENUM5     = $(ENUM_HDR5)
 # -----------------------------------------------------------------------------------------------------------------------------
 DF_CLOTH1    = $(CLOTH_HDR1)
 DF_CLOTH2    = $(CLOTH_HDR2)
@@ -371,20 +388,24 @@ DF_CLOTH16   = $(CLOTH_HDR16)
 DF_CLOTH17   = $(CLOTH_HDR17)
 DF_CLOTH18   = $(CLOTH_HDR18)
 # -----------------------------------------------------------------------------------------------------------------------------
-DF_STRUCT1   = $(STRUCT_HDR1)
-DF_STRUCT2   = $(STRUCT_HDR2)
-DF_STRUCT3   = $(STRUCT_HDR3)
-DF_STRUCT4   = $(STRUCT_HDR4) $(CLOTH_HDF_ALL)
-DF_STRUCT5   = $(STRUCT_HDR5)
-DF_STRUCT6   = $(STRUCT_HDR6)
-DF_STRUCT7   = $(STRUCT_HDR7)
-DF_STRUCT8   = $(STRUCT_HDR8)
-DF_STRUCT9   = $(STRUCT_HDR9)
+DF_STRUCT1    = $(STRUCT_HDR1)
+DF_STRUCT2    = $(STRUCT_HDR2)
+DF_STRUCT3    = $(STRUCT_HDR3)
+DF_STRUCT4    = $(STRUCT_HDR4) $(CLOTH_HDF_ALL)
+DF_STRUCT5    = $(STRUCT_HDR5)
+DF_STRUCT6    = $(STRUCT_HDR6)
+DF_STRUCT7    = $(STRUCT_HDR7)
+DF_STRUCT8    = $(STRUCT_HDR8)
+DF_STRUCT9    = $(STRUCT_HDR9)
+DF_STRUCT10   = $(STRUCT_HDR10)
+DF_STRUCT11   = $(STRUCT_HDR11) $(ENUM_HDR5)
 # -----------------------------------------------------------------------------------------------------------------------------
 DF_TYPES1   = $(TYPES_HDR1)
 # -----------------------------------------------------------------------------------------------------------------------------
 DF_WRAPPER1  = $(WRAPPER_HDR1) 
 DF_WRAPPER1 += $(STRUCT_HDF1) $(STRUCT_HDF2) $(STRUCT_HDF5) $(STRUCT_HDF6) $(STRUCT_HDF7) $(STRUCT_HDR8)
+DF_WRAPPER1 += $(STRUCT_HDR9) $(STRUCT_HDR10) $(STRUCT_HDR11)
+
 DF_WRAPPER2  = $(WRAPPER_HDR2)
 # -----------------------------------------------------------------------------------------------------------------------------
 
@@ -471,6 +492,9 @@ $(ENUM_OBJ3): $(ENUM_SRC3) $(DF_ENUM3)
 
 $(ENUM_OBJ4): $(ENUM_SRC4) $(DF_ENUM4)
 	$(CC) $(OPTIMIZE) -c $(ENUM_SRC4) -o $(ENUM_OBJ4)
+
+$(ENUM_OBJ5): $(ENUM_SRC5) $(DF_ENUM5)
+	$(CC) $(OPTIMIZE) -c $(ENUM_SRC5) -o $(ENUM_OBJ5)
 # -----------------------------------------------------------------------------------------------------------------------------
 # Type / Enum / Action Object
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -561,6 +585,12 @@ $(STRUCT_OBJ8): $(STRUCT_SRC8) $(DF_STRUCT8)
 
 $(STRUCT_OBJ9): $(STRUCT_SRC9) $(DF_STRUCT9)
 	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC9) -o $(STRUCT_OBJ9)
+
+$(STRUCT_OBJ10): $(STRUCT_SRC10) $(DF_STRUCT10)
+	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC10) -o $(STRUCT_OBJ10)
+
+$(STRUCT_OBJ11): $(STRUCT_SRC11) $(DF_STRUCT11)
+	$(CC) $(OPTIMIZE) -c $(STRUCT_SRC11) -o $(STRUCT_OBJ11)
 # -----------------------------------------------------------------------------------------------------------------------------
 # Type / Types Object
 # -----------------------------------------------------------------------------------------------------------------------------

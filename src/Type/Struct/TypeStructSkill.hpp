@@ -56,8 +56,8 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Include Guarde
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#ifndef TYPE_STRUCT_WALLET_HPP
-#define TYPE_STRUCT_WALLET_HPP
+#ifndef TYPE_STRUCT_SKILL_HPP
+#define TYPE_STRUCT_SKILL_HPP
 // -------------------------------------------------------------------------------------------------------------------------------------//
 #ifndef __SAS_BUILD__
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -96,6 +96,8 @@
 #include <string>  // use <string>
 
 #include <cstdint> // use <uint8_t>
+
+#include <array>
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -104,11 +106,25 @@
 namespace SAS
 {
 
-struct F_Wallet
-{
-    int BasicMoney;
 
-    F_Wallet( int tmp );
+constexpr size_t SKILLS_LIST_SIZE = 500;
+constexpr std::string SKILLS_DEFAULT_NAME = "DEFAULT";
+
+struct F_SkillBasic
+{
+    std::string Name;
+    unsigned int ID;
+    unsigned int Count;
+
+public:
+    F_SkillBasic( const std::string p_SkillName = SAS::SKILLS_DEFAULT_NAME , unsigned int p_SkillID = 0 , unsigned int p_SkillCount = 0 );
+
+private:
+};
+
+struct F_Skill
+{
+    std::array<F_SkillBasic , SKILLS_LIST_SIZE > Skills;
 };
 
 

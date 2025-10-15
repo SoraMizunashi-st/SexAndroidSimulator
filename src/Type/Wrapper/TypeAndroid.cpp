@@ -6,7 +6,10 @@ SAS::TypeAndroid::TypeAndroid()
     : m_Data()
     , m_LifeTime(10)
     , m_Wallet(100)
+    , m_Cost()
     , m_Greed(0)
+    , m_Items()
+    , m_Skill()
     , m_Personality( SAS::EMOTION_DIMENSION_8Dx8D)
 {
     std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++ " << std::endl;
@@ -17,7 +20,11 @@ SAS::TypeAndroid::TypeAndroid()
 // Accessor / Setter Method
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
-
+SAS::TypeAndroid& SAS::TypeAndroid::setCost( SAS::E_COST IDs , int Value )
+{
+    this->m_Cost.Cost[ static_cast<std::size_t>(IDs) ].Gain = Value;
+    return *this;
+}
 
 
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -47,6 +54,11 @@ int SAS::TypeAndroid::getDesireSleep()
 int SAS::TypeAndroid::getDesireSexual()
 {
     return this->m_Greed.DesireSexual;
+}
+
+int SAS::TypeAndroid::getCost( SAS::E_COST IDs )
+{
+    return this->m_Cost.Cost[ static_cast<std::size_t>(IDs) ].Gain;
 }
 
 // -------------------------------------------------------------------------------------------------------------------------------------//
@@ -80,5 +92,11 @@ SAS::TypeAndroid& SAS::TypeAndroid::AddDesireSleep( int AdditionalValue )
 SAS::TypeAndroid& SAS::TypeAndroid::AddDesireSexual( int AdditionalValue )
 {
     this->m_Greed.DesireSexual += AdditionalValue;
+    return *this;
+}
+
+SAS::TypeAndroid& SAS::TypeAndroid::AddCost( SAS::E_COST IDs , int AdditionalValue )
+{
+    this->m_Cost.Cost[ static_cast<std::size_t>(IDs) ].Gain += AdditionalValue;
     return *this;
 }

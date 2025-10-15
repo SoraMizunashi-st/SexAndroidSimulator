@@ -83,6 +83,7 @@
 #include "../Enum/TypeEnumErogenousZone.hpp"
 #include "../Enum/TypeEnumRole.hpp"
 #include "../Enum/TypeEnumSex.hpp"
+#include "../Enum/TypeEnumCost.hpp"
 
 #include "../Struct/TypeStructConfigAndroidData.hpp"
 #include "../Struct/TypeStructErogenousZone.hpp"
@@ -90,6 +91,9 @@
 #include "../Struct/TypeStructLifeTime.hpp"
 #include "../Struct/TypeStructGreed.hpp"
 #include "../Struct/TypeStructItems.hpp"
+#include "../Struct/TypeStructPosition.hpp"
+#include "../Struct/TypeStructSkill.hpp"
+#include "../Struct/TypeStructCost.hpp"
 
 #include "../Types/TypesUsingTensor.hpp"
 
@@ -129,11 +133,16 @@ class TypeAndroid
 public:
     TypeAndroid();
     ~TypeAndroid() = default;
+
+    // ---------------------------------------------------------------------------------------------------------------------------------//
+    // I/F
+    // ---------------------------------------------------------------------------------------------------------------------------------//
+
     
     // ---------------------------------------------------------------------------------------------------------------------------------//
     // Accessor / Setter Method
     // ---------------------------------------------------------------------------------------------------------------------------------//
-
+    TypeAndroid& setCost( SAS::E_COST IDs , int Value );
     // ---------------------------------------------------------------------------------------------------------------------------------//
     // Accessor / Getter Method
     // ---------------------------------------------------------------------------------------------------------------------------------//
@@ -144,32 +153,51 @@ public:
     int getDesireSleep();
     int getDesireSexual();
 
+    int getCost( SAS::E_COST IDs );
+
     // ---------------------------------------------------------------------------------------------------------------------------------//
     // Accessor / Adder Method
     // ---------------------------------------------------------------------------------------------------------------------------------//
     TypeAndroid& AddLifeTime( int AdditionalValue );
     TypeAndroid& AddWallet( int AdditionalValue ) ;
+
     TypeAndroid& AddDesireEat( int AdditionalValue );
     TypeAndroid& AddDesireSleep( int AdditionalValue );
     TypeAndroid& AddDesireSexual( int AdditionalValue );
 
+    TypeAndroid& AddCost( SAS::E_COST IDs , int AdditionalValue );
+
 private:
     // ---------------------------------------------------------------------------------------------------------------------------------//
+    //
     // Static Param
+    //
     // ---------------------------------------------------------------------------------------------------------------------------------//
     F_ConfigAndroidData  m_Data;
     
     // ---------------------------------------------------------------------------------------------------------------------------------//
+    //
     // Dynamic Param
+    //
     // ---------------------------------------------------------------------------------------------------------------------------------//
     F_LifeTime m_LifeTime;
     F_Wallet m_Wallet;
 
+    F_Cost m_Cost;
+
     F_Greed m_Greed;
 
     F_Items m_Items;
+    F_Skill m_Skill;
+
+    F_Pos3D m_pos;
+    F_Rad3D m_rad;
 
     PersonalityTensor m_Personality;
+
+    // ---------------------------------------------------------------------------------------------------------------------------------//
+    // HelperMethod
+    // ---------------------------------------------------------------------------------------------------------------------------------//
 
 };
 

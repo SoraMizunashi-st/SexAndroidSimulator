@@ -106,7 +106,7 @@ namespace SAS
 
 struct F_LifeTime
 {
-    float BasicLifeTime;
+    int BasicLifeTime;
 
 public:
     F_LifeTime( int tmp );
